@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>deepmind on wlsc_Tech_blog</title>
+    <link>https://blog.wlsc.de/tags/deepmind/</link>
+    <description>Recent content in deepmind on wlsc_Tech_blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 22 Jul 2016 10:56:21 +0000</lastBuildDate><atom:link href="https://blog.wlsc.de/tags/deepmind/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Deepmind AI reduces Google data center cooling bill by 40%</title>
+      <link>https://blog.wlsc.de/2016/07/22/deepmind-ai-reduces-google-data-center-cooling-bill-by-40/</link>
+      <pubDate>Fri, 22 Jul 2016 10:56:21 +0000</pubDate>
+      
+      <guid>https://blog.wlsc.de/2016/07/22/deepmind-ai-reduces-google-data-center-cooling-bill-by-40/</guid>
+      <description>&lt;div dir=&#34;ltr&#34;&gt;
+  &lt;img class=&#34;aligncenter wp-image-193 size-large&#34; src=&#34;https://blog.wlsc.de/images/2016/07/DC_PUE-1024x431.png&#34; alt=&#34;Deepmind&#39;s AI reduces cooling bills&#34; width=&#34;750&#34; height=&#34;316&#34; srcset=&#34;https://blog.wlsc.de/images/2016/07/DC_PUE-1024x431.png 1024w, https://blog.wlsc.de/images/2016/07/DC_PUE-300x126.png 300w, https://blog.wlsc.de/images/2016/07/DC_PUE-768x323.png 768w, https://blog.wlsc.de/images/2016/07/DC_PUE.png 1600w&#34; sizes=&#34;(max-width: 750px) 100vw, 750px&#34; /&gt;
+&lt;/div&gt;
+&lt;p&gt;From smartphone assistants to image recognition and translation, machine learning already helps us in our everyday lives. But it can also help us to tackle some of the world’s most challenging physical problems — such as energy consumption.  Large-scale commercial and industrial systems like data centres consume a lot of energy, and while much has been done to stem the growth of energy use, there remains a lot more to do given the world’s increasing need for computing power.&lt;/p&gt;
+&lt;p&gt;Reducing energy usage has been a major focus for us over the past  10 years: we have built our own super-efficient servers at Google, invented more efficient ways to cool our data centres and invested heavily in green energy sources, with the goal of being powered 100 percent by renewable energy. Compared to five years ago, we now get around 3.5 times the computing power out of the same amount of energy, and we continue to make many improvements each year.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

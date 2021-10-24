@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Launching GWT app in SuperDevMode on local Tomcat server // wlsc_Tech_blog</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="author" content="Wladimir Schmidt">
+    <meta name="description" content="Blog of a passionate Software Engineer who is happy to share his thoughts, ideas and experience">
+    <meta name="keywords" content="software,engineering,blog,java,">
+
+        <meta property="og:title" content="Launching GWT app in SuperDevMode on local Tomcat server" />
+    <meta property="og:description" content="Blog of a passionate Software Engineer who is happy to share his thoughts, ideas and experience" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en" />
+    <meta property="og:url" content="https://blog.wlsc.de/2015/10/03/launching-gwt-app-in-superdevmode-on-local-tomcat-server/" />
+    
+
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <link href="https://blog.wlsc.de/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+    <link href="https://blog.wlsc.de/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="https://blog.wlsc.de/css/style.css">
+    
+
+    <meta name="generator" content="Hugo 0.88.1" />
+</head>
+
+
+<body>
+<div id="container">
+    <header id="header">
+    <div id="header-outer" class="outer">
+        <div id="header-inner" class="inner">
+            <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+            <a id="logo" class="logo-text" href="https://blog.wlsc.de/">wlsc_Tech_blog</a>
+            <nav id="main-nav">
+                
+                <a class="main-nav-link" href="https://wlsc.de/">..:index:..</a>
+                
+            </nav>
+            <nav id="sub-nav">
+                <div id="search-form-wrap">
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+
+    <section id="main" class="outer">
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        <header class="article-header">
+            <h1 class="article-title" itemprop="name">Launching GWT app in SuperDevMode on local Tomcat server</h1>
+        </header>
+        
+        <div class="article-meta">
+            <a href="/2015/10/03/launching-gwt-app-in-superdevmode-on-local-tomcat-server/" class="article-date">
+                <time datetime='2015-10-03T22:32:57.000&#43;00:00' itemprop="datePublished">2015-10-03</time>
+            </a>
+            
+            
+            <div class="post-categories">
+                <div class="article-category">
+                    
+                    
+                    <a class="article-category-link" href="https://blog.wlsc.de//categories/gwt">GWT</a>
+                    
+                </div>
+            </div>
+            
+            
+        </div>
+        <div class="article-entry" itemprop="articleBody">
+            <p><img class="size-full wp-image-15 aligncenter" src="/images/2015/10/navLogoBig.png" alt="GWT project logo" width="150" height="158" /></p>
+<p>This article is dedicated to all people who are still developing on internal Jetty server and do not know how to run their product on <a href="http://tomcat.apache.org/" target="_blank">Apache Tomcat server</a>. This guide is valid for <strong><a href="http://www.eclipse.org/" target="_blank">Eclipse IDE</a></strong> (Currently: v4.5 MARS).</p>
+<p>First of all, if you are not familiar with <strong>SuperDevMode</strong> and its prerequisites, please, check the official docs at <a href="http://www.gwtproject.org/articles/superdevmode.html" target="_blank"><a href="http://www.gwtproject.org">http://www.gwtproject.org</a>.</a></p>
+<p>How does one start <strong>SuperDevMode</strong> on <strong>Apache Tomcat</strong> server? It’s easy like a pie! 🙂 Just follow these simple steps:</p>
+<ol>
+<li>
+<p>I assume you already have Tomcat server installed on your local machine</p>
+</li>
+<li>
+<p>Click the <strong>right mouse button</strong> on your GWT project and then go to <strong>Run As -&gt; Run Configurations…</strong></p>
+</li>
+<li>
+<p>Then create a new launcher for <strong>Java Application</strong> in the open window</p>
+</li>
+<li>
+<p>In the tab menu choose <strong>Main</strong> and** **type your project name (i.e. _MySuperProject_) or select it with the **Browse** button.  Type in the Main Class text box “**com.google.gwt.dev.codeserver.CodeServer**” without <span id="result_box" class="short_text" lang="en"><span class="hps">quotation marks</span></span></p>
+</li>
+<li>
+<p>Switch to the <strong>Arguments</strong> tab and set <strong>Program Arguments</strong> according to your project like this “<strong>-src src/ com.example.company.gwt.EntryPointClass -port 8900</strong>”
+<strong>–</strong> First argument “<strong>-src src/</strong>” should point at your project source directory
+<strong>–</strong> Second argument “<strong>com.example.company.gwt.EntryPointClass</strong>” should contain your GWT main entry package and class name
+<strong>–</strong> Third argument “<strong>-port 8900</strong>” indicates your port selection for the SuperDevMode running instance</p>
+</li>
+<li>
+<p>In the <strong>VM Arguments</strong> section type whatever you want to be used as arguments by JVM. Normally, my argument settings would look like “<strong>-Xmx2048m -Xms1024m -XX:MaxPermSize=1024M</strong>“</p>
+</li>
+<li>
+<p>Switch to the <strong>Classpath</strong> tab and select <strong>User Entries</strong> there. Then click on <strong>Add JARs…</strong> and go to your <strong>GWT SDK folder</strong>. Select one of jars named <strong>gwt-codeserver.jar</strong></p>
+</li>
+<li>
+<p>Now click on <strong>apply</strong> button and <strong>run</strong> (as fast as u can…just kidding). Your SuperDevMode is now starting on localhost port 8900 (or whatever you selected in the arguments above)</p>
+</li>
+<li>
+<p>Once it started, navigate to <strong>http://localhost:8900/</strong> and follow a step by step guide for setting bookmarks, which will appear automatically</p>
+</li>
+<li>
+<p>Now right click on your project and go to <strong>Run As… -&gt; Run on Server</strong> to** **run your project on Tomcat server</p>
+</li>
+<li>
+<p>Finally, navigate to your Tomcat mount path with your main html page. This page already contains your GWT javascript  <strong>http://localhost:8080/MySuperProject/MySuperProject/index.html</strong>.** **Click on previously bookmarked link to enable **GWT Dev Mode ON**</p>
+</li>
+<li>
+<p>A dialog window pops up with one <strong>compile</strong> button. After a while the page will be refreshed and you will be able to see your updated project</p>
+</li>
+<li>
+<p>Happy developing with SuperDevMode!</p>
+</li>
+</ol>
+<p>For additional information please visit <a href="http://www.gwtproject.org/articles/superdevmode.html" target="_blank">SuperDevMode</a> page at <a href="http://www.gwtproject.org" target="_blank">gwtproject.org</a></p>
+        </div>
+
+        
+        
+        <div class="article-toc" >
+            <h3>Contents</h3>
+            <nav id="TableOfContents"></nav>
+        </div>
+        
+        
+
+        
+
+
+        
+        <footer class="article-footer">
+            <ul class="article-tag-list">
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="https://blog.wlsc.de/tags/external-server">external server
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="https://blog.wlsc.de/tags/superdevmode">SuperDevMode
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="https://blog.wlsc.de/tags/tomcat">Tomcat
+                    </a>
+                </li>
+                
+            </ul>
+        </footer>
+        
+    </div>
+    
+<nav id="article-nav">
+    
+    <a href="/2015/10/13/gradle-how-to-apply-flavors-for-build-types-in-android-studio/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title"><span>&lt;</span>&nbsp;
+            Gradle: How to apply Flavors for Build Types in Android Studio
+        </div>
+    </a>
+    
+    
+</nav>
+
+
+</article>
+
+        
+    </section>
+    <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2021 wlsc_Tech_blog
+            <br />
+            Powered by <a href="https://gohugo.io" target="_blank">Hugo</a> with theme <a href="https://github.com/carsonip/hugo-theme-minos" target="_blank">Minos</a>
+        </div>
+    </div>
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-68493803-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/tomorrow-night.min.css" integrity="sha256-2wL88NKUqvJi/ExflDzkzUumjUM73mcK2gBvBBeLvTk=" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js" integrity="sha256-KbfTjB0WZ8vvXngdpJGY3Yp3xKk+tttbqClO11anCIU=" crossorigin="anonymous"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    <script>
+        document.getElementById('main-nav-toggle').addEventListener('click', function () {
+            var header = document.getElementById('header');
+            if (header.classList.contains('mobile-on')) {
+                header.classList.remove('mobile-on');
+            } else {
+                header.classList.add('mobile-on');
+            }
+        });
+    </script>
+</footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Generative Adversarial Networks on wlsc_Tech_blog</title>
+    <link>https://blog.wlsc.de/tags/generative-adversarial-networks/</link>
+    <description>Recent content in Generative Adversarial Networks on wlsc_Tech_blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 01 Jan 2017 19:35:17 +0000</lastBuildDate><atom:link href="https://blog.wlsc.de/tags/generative-adversarial-networks/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Apple releases its first AI paper</title>
+      <link>https://blog.wlsc.de/2017/01/01/apple-releases-its-first-ai-paper/</link>
+      <pubDate>Sun, 01 Jan 2017 19:35:17 +0000</pubDate>
+      
+      <guid>https://blog.wlsc.de/2017/01/01/apple-releases-its-first-ai-paper/</guid>
+      <description>&lt;h2 class=&#34;title mathjax&#34; style=&#34;text-align: center;&#34;&gt;
+  Learning from Simulated and Unsupervised Images through Adversarial Training
+&lt;/h2&gt;
+&lt;p style=&#34;text-align: center;&#34;&gt;
+  &lt;a href=&#34;https://blog.wlsc.de/images/2017/01/apple_first_paper.jpg&#34;&gt;&lt;img class=&#34;aligncenter wp-image-256 size-large&#34; src=&#34;https://blog.wlsc.de/images/2017/01/apple_first_paper-1024x560.jpg&#34; alt=&#34;Apple first AI paper&#34; width=&#34;750&#34; height=&#34;410&#34; srcset=&#34;https://blog.wlsc.de/images/2017/01/apple_first_paper-1024x560.jpg 1024w, https://blog.wlsc.de/images/2017/01/apple_first_paper-300x164.jpg 300w, https://blog.wlsc.de/images/2017/01/apple_first_paper-768x420.jpg 768w, https://blog.wlsc.de/images/2017/01/apple_first_paper.jpg 1028w&#34; sizes=&#34;(max-width: 750px) 100vw, 750px&#34; /&gt;&lt;/a&gt;
+&lt;/p&gt;
+&lt;p style=&#34;text-align: left;&#34;&gt;
+  The first paper from Apple company regarding Artificial Intelligence with Deep Learning &lt;a href=&#34;https://arxiv.org/abs/1612.07828&#34; target=&#34;_blank&#34;&gt;is published&lt;/a&gt;!
+&lt;/p&gt;
+&lt;p style=&#34;text-align: left;&#34;&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Concrete AI safety problems // wlsc_Tech_blog</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="author" content="Wladimir Schmidt">
+    <meta name="description" content="Blog of a passionate Software Engineer who is happy to share his thoughts, ideas and experience">
+    <meta name="keywords" content="software,engineering,blog,java,">
+
+        <meta property="og:title" content="Concrete AI safety problems" />
+    <meta property="og:description" content="Blog of a passionate Software Engineer who is happy to share his thoughts, ideas and experience" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en" />
+    <meta property="og:url" content="https://blog.wlsc.de/2016/06/22/concrete-ai-safety-problems/" />
+    
+
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <link href="https://blog.wlsc.de/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+    <link href="https://blog.wlsc.de/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="https://blog.wlsc.de/css/style.css">
+    
+
+    <meta name="generator" content="Hugo 0.88.1" />
+</head>
+
+
+<body>
+<div id="container">
+    <header id="header">
+    <div id="header-outer" class="outer">
+        <div id="header-inner" class="inner">
+            <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+            <a id="logo" class="logo-text" href="https://blog.wlsc.de/">wlsc_Tech_blog</a>
+            <nav id="main-nav">
+                
+                <a class="main-nav-link" href="https://wlsc.de/">..:index:..</a>
+                
+            </nav>
+            <nav id="sub-nav">
+                <div id="search-form-wrap">
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+
+    <section id="main" class="outer">
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        <header class="article-header">
+            <h1 class="article-title" itemprop="name">Concrete AI safety problems</h1>
+        </header>
+        
+        <div class="article-meta">
+            <a href="/2016/06/22/concrete-ai-safety-problems/" class="article-date">
+                <time datetime='2016-06-22T11:20:06.000&#43;00:00' itemprop="datePublished">2016-06-22</time>
+            </a>
+            
+            
+            <div class="post-categories">
+                <div class="article-category">
+                    
+                    
+                    <a class="article-category-link" href="https://blog.wlsc.de//categories/artificial-intelligence">Artificial Intelligence</a>
+                    
+                    
+                    <span>&gt;</span>
+                    
+                    <a class="article-category-link" href="https://blog.wlsc.de//categories/machine-learning">Machine Learning</a>
+                    
+                </div>
+            </div>
+            
+            
+        </div>
+        <div class="article-entry" itemprop="articleBody">
+            <p>The <strong>“Concrete AI safety problems”</strong> paper by _Dario Amodei (Google Brain), Chris Olah (Google Brain), Jacob Steinhardt (Stanford University), Paul Christiano (UC Berkeley), John Schulman (OpenAI), Dan Mané (Google Brain) _suggests a new approach to the Machine Learning (ML) and Artificial Intelligence (AI) research, which focuses more on productivity of forward-looking applications while building cutting-edge AI systems.</p>
+<p>A number of key problems considered in the paper as well as their descriptions are listed below. In the paper authors also elaborate on how to approach each of the given problem.</p>
+<ul>
+<li>
+<p><strong>Avoiding Negative Side Eﬀects:</strong> How can we ensure that our cleaning robot will not</p>
+<p>disturb the environment in negative ways while pursuing its goals, e.g. by knocking over a</p>
+<p>vase because it can clean faster by doing so? Can we do this without manually specifying</p>
+<p>everything the robot should not disturb?</p>
+<ul>
+<li><strong>Avoiding Reward Hacking:</strong> How can we ensure that the cleaning robot won’t game its</li>
+</ul>
+<p>reward function? For example, if we reward the robot for achieving an environment free of</p>
+<p>messes, it might disable its vision so that it won’t ﬁnd any messes, or cover over messes with</p>
+<p>materials it can’t see through, or simply hide when humans are around so they can’t tell it</p>
+<p>about new types of messes.</p>
+<ul>
+<li>
+<p><strong>Scalable Oversight:</strong> How can we eﬃciently ensure that the cleaning robot respects aspects of</p>
+<p>the objective that are too expensive to be frequently evaluated during training? For instance, it</p>
+<p>should throw out things that are unlikely to belong to anyone, but put aside things that might</p>
+<p>belong to someone (it should handle stray candy wrappers diﬀerently from stray cellphones).</p>
+<p>Asking the humans involved whether they lost anything can serve as a check on this, but this</p>
+<p>check might have to be relatively infrequent – can the robot ﬁnd a way to do the right thing</p>
+<p>despite limited information?</p>
+</li>
+<li>
+<p><strong>Safe Exploration:</strong> How do we ensure that the cleaning robot doesn’t make exploratory</p>
+<p>moves with very bad repercussions? For example, the robot should experiment with mopping</p>
+<p>strategies, but putting a wet mop in an electrical outlet is a very bad idea.</p>
+</li>
+<li>
+<p><strong>Robustness to Distributional Shift:</strong> How do we ensure that the cleaning robot recognizes,</p>
+<p>and behaves robustly, when in an environment diﬀerent from its training environment? For</p>
+<p>example, heuristics it learned for cleaning factory workﬂoors may be outright dangerous in an</p>
+<p>oﬃce.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><em>Source: <a href="https://arxiv.org/abs/1606.06565" target="_blank">Concrete Problems in AI Safety</a></em></p>
+        </div>
+
+        
+        
+        <div class="article-toc" >
+            <h3>Contents</h3>
+            <nav id="TableOfContents"></nav>
+        </div>
+        
+        
+
+        
+
+
+        
+        <footer class="article-footer">
+            <ul class="article-tag-list">
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="https://blog.wlsc.de/tags/paper">Paper
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="https://blog.wlsc.de/tags/safety">Safety
+                    </a>
+                </li>
+                
+            </ul>
+        </footer>
+        
+    </div>
+    
+<nav id="article-nav">
+    
+    <a href="/2016/07/22/deepmind-ai-reduces-google-data-center-cooling-bill-by-40/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title"><span>&lt;</span>&nbsp;
+            Deepmind AI reduces Google data center cooling bill by 40%
+        </div>
+    </a>
+    
+    
+    <a href="/2016/06/13/microsoft-to-acquire-linkedin/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">Microsoft to acquire LinkedIn&nbsp;<span>&gt;</span></div>
+    </a>
+    
+</nav>
+
+
+</article>
+
+        
+    </section>
+    <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2021 wlsc_Tech_blog
+            <br />
+            Powered by <a href="https://gohugo.io" target="_blank">Hugo</a> with theme <a href="https://github.com/carsonip/hugo-theme-minos" target="_blank">Minos</a>
+        </div>
+    </div>
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-68493803-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/tomorrow-night.min.css" integrity="sha256-2wL88NKUqvJi/ExflDzkzUumjUM73mcK2gBvBBeLvTk=" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js" integrity="sha256-KbfTjB0WZ8vvXngdpJGY3Yp3xKk+tttbqClO11anCIU=" crossorigin="anonymous"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    <script>
+        document.getElementById('main-nav-toggle').addEventListener('click', function () {
+            var header = document.getElementById('header');
+            if (header.classList.contains('mobile-on')) {
+                header.classList.remove('mobile-on');
+            } else {
+                header.classList.add('mobile-on');
+            }
+        });
+    </script>
+</footer>
+
+</div>
+</body>
+</html>

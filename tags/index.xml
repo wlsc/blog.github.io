@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on wlsc_Tech_blog</title>
+    <link>https://blog.wlsc.de/tags/</link>
+    <description>Recent content in Tags on wlsc_Tech_blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 01 Jan 2017 19:35:17 +0000</lastBuildDate><atom:link href="https://blog.wlsc.de/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Apple</title>
+      <link>https://blog.wlsc.de/tags/apple/</link>
+      <pubDate>Sun, 01 Jan 2017 19:35:17 +0000</pubDate>
+      
+      <guid>https://blog.wlsc.de/tags/apple/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GAN</title>
+      <link>https://blog.wlsc.de/tags/gan/</link>
+      <pubDate>Sun, 01 Jan 2017 19:35:17 +0000</pubDate>
+      
+      <guid>https://blog.wlsc.de/tags/gan/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Generative Adversarial Networks</title>
+      <link>https://blog.wlsc.de/tags/generative-adversarial-networks/</link>
+      <pubDate>Sun, 01 Jan 2017 19:35:17 +0000</pubDate>
+      
+      <guid>https://blog.wlsc.de/tags/generative-adversarial-networks/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Paper</title>
+      <link>https://blog.wlsc.de/tags/paper/</link>
+      <pubDate>Sun, 01 Jan 2017 19:35:17 +0000</pubDate>
+      
+      <guid>https://blog.wlsc.de/tags/paper/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>lectures</title>
+      <link>https://blog.wlsc.de/tags/lectures/</link>
+      <pubDate>Sun, 25 Sep 2016 18:42:57 +0000</pubDate>
+      
+      <guid>https://blog.wlsc.de/tags/lectures/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>stanford</title>
+      <link>https://blog.wlsc.de/tags/stanford/</link>
+      <pubDate>Sun, 25 Sep 2016 18:42:57 +0000</pubDate>
+      
+      <guid>https://blog.wlsc.de/tags/stanford/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>stream</title>
+      <link>https://blog.wlsc.de/tags/stream/</link>
+      <pubDate>Sun, 25 Sep 2016 18:42:57 +0000</pubDate>
+      
+      <guid>https://blog.wlsc.de/tags/stream/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

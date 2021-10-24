@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Safety on wlsc_Tech_blog</title>
+    <link>https://blog.wlsc.de/tags/safety/</link>
+    <description>Recent content in Safety on wlsc_Tech_blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 22 Jun 2016 11:20:06 +0000</lastBuildDate><atom:link href="https://blog.wlsc.de/tags/safety/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Concrete AI safety problems</title>
+      <link>https://blog.wlsc.de/2016/06/22/concrete-ai-safety-problems/</link>
+      <pubDate>Wed, 22 Jun 2016 11:20:06 +0000</pubDate>
+      
+      <guid>https://blog.wlsc.de/2016/06/22/concrete-ai-safety-problems/</guid>
+      <description>&lt;p&gt;The &lt;strong&gt;“Concrete AI safety problems”&lt;/strong&gt; paper by _Dario Amodei (Google Brain), Chris Olah (Google Brain), Jacob Steinhardt (Stanford University), Paul Christiano (UC Berkeley), John Schulman (OpenAI), Dan Mané (Google Brain) _suggests a new approach to the Machine Learning (ML) and Artificial Intelligence (AI) research, which focuses more on productivity of forward-looking applications while building cutting-edge AI systems.&lt;/p&gt;
+&lt;p&gt;A number of key problems considered in the paper as well as their descriptions are listed below. In the paper authors also elaborate on how to approach each of the given problem.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

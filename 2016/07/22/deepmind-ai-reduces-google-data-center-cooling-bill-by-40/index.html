@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Deepmind AI reduces Google data center cooling bill by 40% // wlsc_Tech_blog</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="author" content="Wladimir Schmidt">
+    <meta name="description" content="Blog of a passionate Software Engineer who is happy to share his thoughts, ideas and experience">
+    <meta name="keywords" content="software,engineering,blog,java,">
+
+        <meta property="og:title" content="Deepmind AI reduces Google data center cooling bill by 40%" />
+    <meta property="og:description" content="Blog of a passionate Software Engineer who is happy to share his thoughts, ideas and experience" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en" />
+    <meta property="og:url" content="https://blog.wlsc.de/2016/07/22/deepmind-ai-reduces-google-data-center-cooling-bill-by-40/" />
+    
+
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <link href="https://blog.wlsc.de/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+    <link href="https://blog.wlsc.de/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="https://blog.wlsc.de/css/style.css">
+    
+
+    <meta name="generator" content="Hugo 0.88.1" />
+</head>
+
+
+<body>
+<div id="container">
+    <header id="header">
+    <div id="header-outer" class="outer">
+        <div id="header-inner" class="inner">
+            <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+            <a id="logo" class="logo-text" href="https://blog.wlsc.de/">wlsc_Tech_blog</a>
+            <nav id="main-nav">
+                
+                <a class="main-nav-link" href="https://wlsc.de/">..:index:..</a>
+                
+            </nav>
+            <nav id="sub-nav">
+                <div id="search-form-wrap">
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+
+    <section id="main" class="outer">
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        <header class="article-header">
+            <h1 class="article-title" itemprop="name">Deepmind AI reduces Google data center cooling bill by 40%</h1>
+        </header>
+        
+        <div class="article-meta">
+            <a href="/2016/07/22/deepmind-ai-reduces-google-data-center-cooling-bill-by-40/" class="article-date">
+                <time datetime='2016-07-22T10:56:21.000&#43;00:00' itemprop="datePublished">2016-07-22</time>
+            </a>
+            
+            
+            <div class="post-categories">
+                <div class="article-category">
+                    
+                    
+                    <a class="article-category-link" href="https://blog.wlsc.de//categories/artificial-intelligence">Artificial Intelligence</a>
+                    
+                    
+                    <span>&gt;</span>
+                    
+                    <a class="article-category-link" href="https://blog.wlsc.de//categories/machine-learning">Machine Learning</a>
+                    
+                    
+                    <span>&gt;</span>
+                    
+                    <a class="article-category-link" href="https://blog.wlsc.de//categories/news">News</a>
+                    
+                </div>
+            </div>
+            
+            
+        </div>
+        <div class="article-entry" itemprop="articleBody">
+            <div dir="ltr">
+  <img class="aligncenter wp-image-193 size-large" src="/images/2016/07/DC_PUE-1024x431.png" alt="Deepmind's AI reduces cooling bills" width="750" height="316" srcset="/images/2016/07/DC_PUE-1024x431.png 1024w, /images/2016/07/DC_PUE-300x126.png 300w, /images/2016/07/DC_PUE-768x323.png 768w, /images/2016/07/DC_PUE.png 1600w" sizes="(max-width: 750px) 100vw, 750px" />
+</div>
+<p>From smartphone assistants to image recognition and translation, machine learning already helps us in our everyday lives. But it can also help us to tackle some of the world’s most challenging physical problems — such as energy consumption.  Large-scale commercial and industrial systems like data centres consume a lot of energy, and while much has been done to stem the growth of energy use, there remains a lot more to do given the world’s increasing need for computing power.</p>
+<p>Reducing energy usage has been a major focus for us over the past  10 years: we have built our own super-efficient servers at Google, invented more efficient ways to cool our data centres and invested heavily in green energy sources, with the goal of being powered 100 percent by renewable energy. Compared to five years ago, we now get around 3.5 times the computing power out of the same amount of energy, and we continue to make many improvements each year.</p>
+<p>Major breakthroughs, however, are few and far between — which is why we are excited to share that by applying DeepMind’s machine learning to our own Google data centres, we’ve managed to reduce the amount of energy we use for cooling by up to 40 percent. In any large scale energy-consuming environment, this would be a huge improvement. Given how sophisticated Google’s data centres are already, it’s a phenomenal step forward.</p>
+<p>The implications are significant for Google’s data centres, given its potential to greatly improve energy efficiency and reduce emissions overall. This will also help other companies who run on Google’s cloud to improve their own energy efficiency. While Google is only one of many data centre operators in the world, many are not powered by renewable energy as we are. Every improvement in data centre efficiency reduces total emissions into our environment and with technology like DeepMind’s, we can use machine learning to consume less energy and help address one of the biggest challenges of all — climate change.</p>
+<p>One of the primary sources of energy use in the data centre environment is cooling. Just as your laptop generates a lot of heat, our data centres — which contain servers powering Google Search, Gmail, YouTube, etc. — also generate a lot of heat that must be removed to keep the servers running. This cooling is typically accomplished via large industrial equipment such as pumps, chillers and cooling towers. However, dynamic environments like data centres make it difficult to operate optimally for several reasons:</p>
+<ol>
+<li>The equipment, how we operate that equipment, and the environment interact with each other in complex, nonlinear ways. Traditional formula-based engineering and human intuition often do not capture these interactions.</li>
+<li>The system cannot adapt quickly to internal or external changes (like the weather). This is because we cannot come up with rules and heuristics for every operating scenario.</li>
+<li>Each data centre has a unique architecture and environment. A custom-tuned model for one system may not be applicable to another. Therefore, a general intelligence framework is needed to understand the data centre’s interactions.</li>
+</ol>
+<p>To address this problem, we began applying machine learning two years ago to operate our data centres more efficiently. And over the past few months, DeepMind researchers began working with Google’s data centre team to significantly improve the system’s utility. Using a system of neural networks trained on different operating scenarios and parameters within our data centres, we created a more efficient and adaptive framework to understand data centre dynamics and optimize efficiency.</p>
+<p>We accomplished this by taking the historical data that had already been collected by thousands of sensors within the data centre — data such as temperatures, power, pump speeds, setpoints, etc. — and using it to train an ensemble of deep neural networks. Since our objective was to improve data centre energy efficiency, we trained the neural networks on the average future PUE (Power Usage Effectiveness), which is defined as the ratio of the total building energy usage to the IT energy usage. We then trained two additional ensembles of deep neural networks to predict the future temperature and pressure of the data centre over the next hour. The purpose of these predictions is to simulate the recommended actions from the PUE model, to ensure that we do not go beyond any operating constraints.</p>
+<p>We tested our model by deploying on a live data centre. The graph below shows a typical day of testing, including when we turned the machine learning recommendations on, and when we turned them off.</p>
+<p>Our machine learning system was able to consistently achieve a 40 percent reduction in the amount of energy used for cooling, which equates to a 15 percent reduction in overall PUE overhead after accounting for electrical losses and other non-cooling inefficiencies. It also produced the lowest PUE the site had ever seen.</p>
+<p>Because the algorithm is a general-purpose framework to understand complex dynamics, we plan to apply this to other challenges in the data centre environment and beyond in the coming months. Possible applications of this technology include improving power plant conversion efficiency (getting more energy from the same unit of input), reducing semiconductor manufacturing energy and water usage, or helping manufacturing facilities increase throughput.</p>
+<p>We are planning to roll out this system more broadly and will share how we did it in an upcoming publication, so that other data centre and industrial system operators — and ultimately the environment — can benefit from this major step forward.</p>
+<p><em>Source: <a href="https://deepmind.com/blog" target="_blank"><a href="https://deepmind.com/blog">https://deepmind.com/blog</a></a></em></p>
+        </div>
+
+        
+        
+        <div class="article-toc" >
+            <h3>Contents</h3>
+            <nav id="TableOfContents"></nav>
+        </div>
+        
+        
+
+        
+
+
+        
+        <footer class="article-footer">
+            <ul class="article-tag-list">
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="https://blog.wlsc.de/tags/deepmind">deepmind
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="https://blog.wlsc.de/tags/google">google
+                    </a>
+                </li>
+                
+            </ul>
+        </footer>
+        
+    </div>
+    
+<nav id="article-nav">
+    
+    <a href="/2016/09/05/double-checked-locking-pattern-with-lazy-singletone-initialization/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title"><span>&lt;</span>&nbsp;
+            Double-Checked Locking Pattern with Lazy Singletone Initialization
+        </div>
+    </a>
+    
+    
+    <a href="/2016/06/22/concrete-ai-safety-problems/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">Concrete AI safety problems&nbsp;<span>&gt;</span></div>
+    </a>
+    
+</nav>
+
+
+</article>
+
+        
+    </section>
+    <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2021 wlsc_Tech_blog
+            <br />
+            Powered by <a href="https://gohugo.io" target="_blank">Hugo</a> with theme <a href="https://github.com/carsonip/hugo-theme-minos" target="_blank">Minos</a>
+        </div>
+    </div>
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-68493803-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/tomorrow-night.min.css" integrity="sha256-2wL88NKUqvJi/ExflDzkzUumjUM73mcK2gBvBBeLvTk=" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js" integrity="sha256-KbfTjB0WZ8vvXngdpJGY3Yp3xKk+tttbqClO11anCIU=" crossorigin="anonymous"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    <script>
+        document.getElementById('main-nav-toggle').addEventListener('click', function () {
+            var header = document.getElementById('header');
+            if (header.classList.contains('mobile-on')) {
+                header.classList.remove('mobile-on');
+            } else {
+                header.classList.add('mobile-on');
+            }
+        });
+    </script>
+</footer>
+
+</div>
+</body>
+</html>
