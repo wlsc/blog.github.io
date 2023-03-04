@@ -31,7 +31,7 @@
       <pubDate>Sun, 25 Sep 2016 18:42:57 +0000</pubDate>
       
       <guid>https://blog.wlsc.de/2016/09/25/bay-area-deep-learning-school-lectures-stanford/</guid>
-      <description>&lt;p&gt;&lt;img class=&#34;aligncenter wp-image-232 size-full&#34; src=&#34;https://blog.wlsc.de/images/2016/09/bayareadeeplearningschool.jpg&#34; alt=&#34;Bay Area Deep Learning School&#34; width=&#34;759&#34; height=&#34;206&#34; srcset=&#34;https://blog.wlsc.de/images/2016/09/bayareadeeplearningschool.jpg 759w, https://blog.wlsc.de/images/2016/09/bayareadeeplearningschool-300x81.jpg 300w&#34; sizes=&#34;(max-width: 759px) 100vw, 759px&#34; /&gt;&lt;/p&gt;
+      <description>&lt;img class=&#34;aligncenter wp-image-232 size-full&#34; src=&#34;https://blog.wlsc.de/images/2016/09/bayareadeeplearningschool.jpg&#34; alt=&#34;Bay Area Deep Learning School&#34; width=&#34;759&#34; height=&#34;206&#34; srcset=&#34;https://blog.wlsc.de/images/2016/09/bayareadeeplearningschool.jpg 759w, https://blog.wlsc.de/images/2016/09/bayareadeeplearningschool-300x81.jpg 300w&#34; sizes=&#34;(max-width: 759px) 100vw, 759px&#34; /&gt;
 &lt;p&gt;The Deep Learning School is a great two day set of introduction lectures on Machine Learning, Natural Language Processing and Computer Vision for Deep Learning. The two days event is solely dedicated to Deep Learning! The lectures take place at CEMEX auditorium at the Graduate School of Business on Stanford campus (CA, USA) and include a variety of prominent speakers from the above mentioned research fields.&lt;/p&gt;</description>
     </item>
     
@@ -89,11 +89,11 @@
       
       <guid>https://blog.wlsc.de/2016/06/13/apache-htaccess-force-domain-httpsssl-protocol/</guid>
       <description>&lt;p&gt;In order to redirect all users from the unsecure HTTP to the &lt;strong&gt;secure HTTPS&lt;/strong&gt; connection, you need to edit your &lt;strong&gt;.htaccess&lt;/strong&gt; file. Usually, it is located in the root of your project (e.g., &lt;strong&gt;httpdocs&lt;/strong&gt; folder).&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-apache&#34; data-lang=&#34;apache&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;IfModule&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;mod_rewrite.c&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;
-    RewriteEngine &lt;span style=&#34;color:#66d9ef&#34;&gt;On&lt;/span&gt;
-    RewriteCond %{HTTPS} !=on
-    RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
-&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/IfModule&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-apache&#34; data-lang=&#34;apache&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;IfModule&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;mod_rewrite.c&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    RewriteEngine &lt;span style=&#34;color:#66d9ef&#34;&gt;On&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    RewriteCond %{HTTPS} !=on
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/IfModule&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
   </channel>

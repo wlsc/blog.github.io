@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="https://blog.wlsc.de/css/style.css">
     
 
-    <meta name="generator" content="Hugo 0.88.1" />
+    <meta name="generator" content="Hugo 0.111.1">
 </head>
 
 
@@ -76,17 +76,17 @@
         </div>
         <div class="article-entry" itemprop="articleBody">
             <p>In order to redirect all users from the unsecure HTTP to the <strong>secure HTTPS</strong> connection, you need to edit your <strong>.htaccess</strong> file. Usually, it is located in the root of your project (e.g., <strong>httpdocs</strong> folder).</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-apache" data-lang="apache"><span style="color:#f92672">&lt;IfModule</span> <span style="color:#e6db74">mod_rewrite.c</span><span style="color:#f92672">&gt;</span>
-    RewriteEngine <span style="color:#66d9ef">On</span>
-    RewriteCond %{HTTPS} !=on
-    RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
-<span style="color:#f92672">&lt;/IfModule&gt;</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-apache" data-lang="apache"><span style="display:flex;"><span><span style="color:#f92672">&lt;IfModule</span> <span style="color:#e6db74">mod_rewrite.c</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    RewriteEngine <span style="color:#66d9ef">On</span>
+</span></span><span style="display:flex;"><span>    RewriteCond %{HTTPS} !=on
+</span></span><span style="display:flex;"><span>    RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/IfModule&gt;</span></span></span></code></pre></div>
 <p>First of all, you need to check whether or not the apache rewrite module (mod_rewrite) is enabled. Of course, you can skip the check, but it is <strong>strongly recommended</strong> that you’d rather not (I would say it goes against best practices). Some day you might want to move your blog/website/etc. to another hosting. So what may happen then, is that the new hosting would not support this module or you might need to enable it by yourself.</p>
 <p>Secondly, whenever the rewrite engine itself is turned off, it will be switched on by the “<em>RewriteEngine On</em>” command in the listing above. The next line “<em>RewriteCond %{HTTPS} !=on</em>” will ensure that the user protocol is checked, as to whether it a HTTPS one or not. If the user types in the address starting with HTTP, the “<em>RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]</em>” will be applied. The latter says that the document you are looking for is <strong>Moved Permanently</strong> (protocol status code <strong>301</strong>) to the same address, but with the HTTPS protocol instead.</p>
 <p>Similarly, to the code provided above, you are able to <strong>redirect your subdomain</strong> from HTTP to secure HTTPS protocol. All you need to do is to change carefully “<em>blog.wlsc.de</em>” for your subdomain.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-apache" data-lang="apache">RewriteCond %{HTTPS} !=on [OR]
-RewriteCond %{HTTP_HOST} !^blog\.wlsc\.de$ [NC]
-RewriteRule ^ https://blog.wlsc.de%{REQUEST_URI} [R=301,L]</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-apache" data-lang="apache"><span style="display:flex;"><span>RewriteCond %{HTTPS} !=on [OR]
+</span></span><span style="display:flex;"><span>RewriteCond %{HTTP_HOST} !^blog\.wlsc\.de$ [NC]
+</span></span><span style="display:flex;"><span>RewriteRule ^ https://blog.wlsc.de%{REQUEST_URI} [R=301,L]</span></span></code></pre></div>
 <p>Voila! Your redirect from the unsecure HTTP protocol to the secure HTTPS is ready!!</p>
 <p>Now you walk on the <strong>safe side</strong>! Take care.</p>
         </div>
@@ -160,7 +160,7 @@ RewriteRule ^ https://blog.wlsc.de%{REQUEST_URI} [R=301,L]</code></pre></div>
     <footer id="footer">
     <div class="outer">
         <div id="footer-info" class="inner">
-            &copy; 2021 wlsc_Tech_blog
+            &copy; 2023 wlsc_Tech_blog
             <br />
             Powered by <a href="https://gohugo.io" target="_blank">Hugo</a> with theme <a href="https://github.com/carsonip/hugo-theme-minos" target="_blank">Minos</a>
         </div>

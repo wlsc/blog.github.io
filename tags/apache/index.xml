@@ -14,11 +14,11 @@
       
       <guid>https://blog.wlsc.de/2016/06/13/apache-htaccess-force-domain-httpsssl-protocol/</guid>
       <description>&lt;p&gt;In order to redirect all users from the unsecure HTTP to the &lt;strong&gt;secure HTTPS&lt;/strong&gt; connection, you need to edit your &lt;strong&gt;.htaccess&lt;/strong&gt; file. Usually, it is located in the root of your project (e.g., &lt;strong&gt;httpdocs&lt;/strong&gt; folder).&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-apache&#34; data-lang=&#34;apache&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;IfModule&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;mod_rewrite.c&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;
-    RewriteEngine &lt;span style=&#34;color:#66d9ef&#34;&gt;On&lt;/span&gt;
-    RewriteCond %{HTTPS} !=on
-    RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
-&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/IfModule&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-apache&#34; data-lang=&#34;apache&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;IfModule&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;mod_rewrite.c&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    RewriteEngine &lt;span style=&#34;color:#66d9ef&#34;&gt;On&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    RewriteCond %{HTTPS} !=on
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/IfModule&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
     <item>
@@ -27,7 +27,7 @@
       <pubDate>Thu, 21 Apr 2016 16:10:17 +0000</pubDate>
       
       <guid>https://blog.wlsc.de/2016/04/21/short-url-in-your-gwt-project/</guid>
-      <description>&lt;p&gt;&lt;img class=&#34;size-medium wp-image-88 aligncenter&#34; src=&#34;https://blog.wlsc.de/images/2016/04/pgtqyluoyhr1swo4wrmn-300x115.jpg&#34; alt=&#34;url&#34; width=&#34;300&#34; height=&#34;115&#34; srcset=&#34;https://blog.wlsc.de/images/2016/04/pgtqyluoyhr1swo4wrmn-300x115.jpg 300w, https://blog.wlsc.de/images/2016/04/pgtqyluoyhr1swo4wrmn-768x295.jpg 768w, https://blog.wlsc.de/images/2016/04/pgtqyluoyhr1swo4wrmn-1024x393.jpg 1024w&#34; sizes=&#34;(max-width: 300px) 100vw, 300px&#34; /&gt;&lt;/p&gt;
+      <description>&lt;img class=&#34;size-medium wp-image-88 aligncenter&#34; src=&#34;https://blog.wlsc.de/images/2016/04/pgtqyluoyhr1swo4wrmn-300x115.jpg&#34; alt=&#34;url&#34; width=&#34;300&#34; height=&#34;115&#34; srcset=&#34;https://blog.wlsc.de/images/2016/04/pgtqyluoyhr1swo4wrmn-300x115.jpg 300w, https://blog.wlsc.de/images/2016/04/pgtqyluoyhr1swo4wrmn-768x295.jpg 768w, https://blog.wlsc.de/images/2016/04/pgtqyluoyhr1swo4wrmn-1024x393.jpg 1024w&#34; sizes=&#34;(max-width: 300px) 100vw, 300px&#34; /&gt;
 &lt;p&gt;If you are strugling with a long URL in the GWT project, you are at the right place! There is a small trick, which allows URL to be shorter.&lt;/p&gt;
 &lt;p&gt;From&lt;/p&gt;
 &lt;pre class=&#34;theme:eclipse lang:xhtml decode:true&#34;&gt;https://domain.com/tomcat_context_path/project_name/your_index.html&lt;/pre&gt;

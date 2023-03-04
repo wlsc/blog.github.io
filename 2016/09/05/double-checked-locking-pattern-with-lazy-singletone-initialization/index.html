@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="https://blog.wlsc.de/css/style.css">
     
 
-    <meta name="generator" content="Hugo 0.88.1" />
+    <meta name="generator" content="Hugo 0.111.1">
 </head>
 
 
@@ -79,32 +79,32 @@
   <img class="aligncenter size-medium wp-image-219" src="/images/2016/09/keep-calm-and-double-check-257x300.png" alt="Keep calm and double check" width="257" height="300" srcset="/images/2016/09/keep-calm-and-double-check-257x300.png 257w, /images/2016/09/keep-calm-and-double-check.png 600w" sizes="(max-width: 257px) 100vw, 257px" />
 </p>
 <p>In the real world of multicore processors, we have to write multi-threaded applications that would use all cores efficiently. This is very practical, when it comes to high-loaded servers (with a high amount of users trying to access service at the same time). For instance, after you have successfully introduced the new functionality on your web service or fixed some bugs, your first intuition would be to release the new version as soon as possible. At this point, when your users start to access your web service simultaneously, a situation may arise, when two or more users will initialize the same singleton or field value more than once. This is not a favorable type of scenario. It is also the main reason your applications should be ready to initialize its singletons (and not only) properly!</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Singleton</span> <span style="color:#f92672">{</span>
-    
-    <span style="color:#75715e">// block access for two threads simultaneous
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">volatile</span> Singleton INSTANCE<span style="color:#f92672">;</span>
-   
-    <span style="color:#75715e">/*
-</span><span style="color:#75715e">    * Blocks direct object creation
-</span><span style="color:#75715e">    */</span>
-    <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">Singleton</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-    <span style="color:#f92672">}</span>
-
-    <span style="color:#66d9ef">public</span> Singleton <span style="color:#a6e22e">getInstance</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-
-        <span style="color:#75715e">// first check: two or more threads can pass this check
-</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>INSTANCE <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-            <span style="color:#66d9ef">synchronized</span> <span style="color:#f92672">(</span>Singleton<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-                <span style="color:#75715e">// second check: only one thread will initialize the variable instance
-</span><span style="color:#75715e"></span>                <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>INSTANCE <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-                    INSTANCE <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Singleton<span style="color:#f92672">();</span>
-                <span style="color:#f92672">}</span>
-            <span style="color:#f92672">}</span>
-        <span style="color:#f92672">}</span>
-
-        <span style="color:#66d9ef">return</span> INSTANCE<span style="color:#f92672">;</span>
-    <span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Singleton</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// block access for two threads simultaneous
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">volatile</span> Singleton INSTANCE<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>   
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    * Blocks direct object creation
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    */</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">Singleton</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> Singleton <span style="color:#a6e22e">getInstance</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// first check: two or more threads can pass this check
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>INSTANCE <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">synchronized</span> <span style="color:#f92672">(</span>Singleton<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// second check: only one thread will initialize the variable instance
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>INSTANCE <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>                    INSTANCE <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Singleton<span style="color:#f92672">();</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> INSTANCE<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span></span></span></code></pre></div>
 <p>The code above does the singleton initialization in two major steps:</p>
 <ol>
 <li>The first step would be to check, if the singleton INSTANCE has been already initialized. No big deal.</li>
@@ -112,9 +112,9 @@
 </ol>
 <p>Without the volatile variable, another thread could read a half-initialized INSTRANCE variable in the moment when the first thread is about to leave the synchronized block. The volatile variable guarantees happens-before behaviour. This means, that any write action related to the variable will take place prior to any reads. As a result, in the memory the object will be created only once, while your code will be possible to use safely in a multithreaded environment.</p>
 <p>However, starting Java 1.5 release, Enum class was introduced. It does allow for an easy multithread-safe creation of a singleton instance.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">enum</span> Singleton <span style="color:#f92672">{</span>
-    INSTANCE<span style="color:#f92672">;</span>
-<span style="color:#f92672">}</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">enum</span> Singleton <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    INSTANCE<span style="color:#f92672">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span></span></span></code></pre></div>
 <p>Many programmers prefer Enums to handcrafting singletons by themselves.  Personally I also share this approach and thus I don’t recommend using anything but Enum singletons in your multithreaded applications. This will reduce side-effects, errors and obvious memory leaks in your programs.</p>
 <p>The Double Checked pattern itself does allow you to initialize any preferred variable in a multithreaded environment, not just a singleton class. Many interviewers tend to ask this question in the job interviews (especially if you are a junior in the beginning of your Software Development career) in order check your ability to understand the basics of multithreaded programming.</p>
         </div>
@@ -188,7 +188,7 @@
     <footer id="footer">
     <div class="outer">
         <div id="footer-info" class="inner">
-            &copy; 2021 wlsc_Tech_blog
+            &copy; 2023 wlsc_Tech_blog
             <br />
             Powered by <a href="https://gohugo.io" target="_blank">Hugo</a> with theme <a href="https://github.com/carsonip/hugo-theme-minos" target="_blank">Minos</a>
         </div>
