@@ -6,20 +6,14 @@
     <description>Recent content in tricks on wlsc_Tech_blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 21 Apr 2016 16:10:17 +0000</lastBuildDate><atom:link href="https://blog.wlsc.de/tags/tricks/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 21 Apr 2016 16:10:17 +0000</lastBuildDate>
+    <atom:link href="https://blog.wlsc.de/tags/tricks/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Short URL in your GWT project</title>
       <link>https://blog.wlsc.de/2016/04/21/short-url-in-your-gwt-project/</link>
       <pubDate>Thu, 21 Apr 2016 16:10:17 +0000</pubDate>
-      
       <guid>https://blog.wlsc.de/2016/04/21/short-url-in-your-gwt-project/</guid>
-      <description>&lt;img class=&#34;size-medium wp-image-88 aligncenter&#34; src=&#34;https://blog.wlsc.de/images/2016/04/pgtqyluoyhr1swo4wrmn-300x115.jpg&#34; alt=&#34;url&#34; width=&#34;300&#34; height=&#34;115&#34; srcset=&#34;https://blog.wlsc.de/images/2016/04/pgtqyluoyhr1swo4wrmn-300x115.jpg 300w, https://blog.wlsc.de/images/2016/04/pgtqyluoyhr1swo4wrmn-768x295.jpg 768w, https://blog.wlsc.de/images/2016/04/pgtqyluoyhr1swo4wrmn-1024x393.jpg 1024w&#34; sizes=&#34;(max-width: 300px) 100vw, 300px&#34; /&gt;
-&lt;p&gt;If you are strugling with a long URL in the GWT project, you are at the right place! There is a small trick, which allows URL to be shorter.&lt;/p&gt;
-&lt;p&gt;From&lt;/p&gt;
-&lt;pre class=&#34;theme:eclipse lang:xhtml decode:true&#34;&gt;https://domain.com/tomcat_context_path/project_name/your_index.html&lt;/pre&gt;
-&lt;p&gt;To&lt;/p&gt;
-&lt;pre class=&#34;theme:eclipse lang:xhtml decode:true &#34;&gt;https://domain.com/tomcat_context_path/&lt;/pre&gt;</description>
+      <description>&lt;img class=&#34;size-medium wp-image-88 aligncenter&#34; src=&#34;https://blog.wlsc.de/images/2016/04/pgtqyluoyhr1swo4wrmn-300x115.jpg&#34; alt=&#34;url&#34; width=&#34;300&#34; height=&#34;115&#34; srcset=&#34;https://blog.wlsc.de/images/2016/04/pgtqyluoyhr1swo4wrmn-300x115.jpg 300w, https://blog.wlsc.de/images/2016/04/pgtqyluoyhr1swo4wrmn-768x295.jpg 768w, https://blog.wlsc.de/images/2016/04/pgtqyluoyhr1swo4wrmn-1024x393.jpg 1024w&#34; sizes=&#34;(max-width: 300px) 100vw, 300px&#34; /&gt;&#xA;&lt;p&gt;If you are strugling with a long URL in the GWT project, you are at the right place! There is a small trick, which allows URL to be shorter.&lt;/p&gt;&#xA;&lt;p&gt;From&lt;/p&gt;&#xA;&lt;pre class=&#34;theme:eclipse lang:xhtml decode:true&#34;&gt;https://domain.com/tomcat_context_path/project_name/your_index.html&lt;/pre&gt;&#xA;&lt;p&gt;To&lt;/p&gt;&#xA;&lt;pre class=&#34;theme:eclipse lang:xhtml decode:true &#34;&gt;https://domain.com/tomcat_context_path/&lt;/pre&gt;</description>
     </item>
-    
   </channel>
 </rss>

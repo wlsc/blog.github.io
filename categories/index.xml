@@ -6,69 +6,56 @@
     <description>Recent content in Categories on wlsc_Tech_blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 01 Jan 2017 19:35:17 +0000</lastBuildDate><atom:link href="https://blog.wlsc.de/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 01 Jan 2017 19:35:17 +0000</lastBuildDate>
+    <atom:link href="https://blog.wlsc.de/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Artificial Intelligence</title>
       <link>https://blog.wlsc.de/categories/artificial-intelligence/</link>
       <pubDate>Sun, 01 Jan 2017 19:35:17 +0000</pubDate>
-      
       <guid>https://blog.wlsc.de/categories/artificial-intelligence/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Deep Learning</title>
       <link>https://blog.wlsc.de/categories/deep-learning/</link>
       <pubDate>Sun, 01 Jan 2017 19:35:17 +0000</pubDate>
-      
       <guid>https://blog.wlsc.de/categories/deep-learning/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Machine Learning</title>
       <link>https://blog.wlsc.de/categories/machine-learning/</link>
       <pubDate>Sun, 01 Jan 2017 19:35:17 +0000</pubDate>
-      
       <guid>https://blog.wlsc.de/categories/machine-learning/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>News</title>
       <link>https://blog.wlsc.de/categories/news/</link>
       <pubDate>Sun, 01 Jan 2017 19:35:17 +0000</pubDate>
-      
       <guid>https://blog.wlsc.de/categories/news/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Learning</title>
       <link>https://blog.wlsc.de/categories/learning/</link>
       <pubDate>Sun, 25 Sep 2016 18:42:57 +0000</pubDate>
-      
       <guid>https://blog.wlsc.de/categories/learning/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Java</title>
       <link>https://blog.wlsc.de/categories/java/</link>
       <pubDate>Mon, 05 Sep 2016 20:11:31 +0000</pubDate>
-      
       <guid>https://blog.wlsc.de/categories/java/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Web</title>
       <link>https://blog.wlsc.de/categories/web/</link>
       <pubDate>Mon, 13 Jun 2016 16:31:42 +0000</pubDate>
-      
       <guid>https://blog.wlsc.de/categories/web/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

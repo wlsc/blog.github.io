@@ -6,95 +6,56 @@
     <description>Recent content on wlsc_Tech_blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 01 Jan 2017 19:35:17 +0000</lastBuildDate><atom:link href="https://blog.wlsc.de/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 01 Jan 2017 19:35:17 +0000</lastBuildDate>
+    <atom:link href="https://blog.wlsc.de/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Apple releases its first AI paper</title>
       <link>https://blog.wlsc.de/2017/01/01/apple-releases-its-first-ai-paper/</link>
       <pubDate>Sun, 01 Jan 2017 19:35:17 +0000</pubDate>
-      
       <guid>https://blog.wlsc.de/2017/01/01/apple-releases-its-first-ai-paper/</guid>
-      <description>&lt;h2 class=&#34;title mathjax&#34; style=&#34;text-align: center;&#34;&gt;
-  Learning from Simulated and Unsupervised Images through Adversarial Training
-&lt;/h2&gt;
-&lt;p style=&#34;text-align: center;&#34;&gt;
-  &lt;a href=&#34;https://blog.wlsc.de/images/2017/01/apple_first_paper.jpg&#34;&gt;&lt;img class=&#34;aligncenter wp-image-256 size-large&#34; src=&#34;https://blog.wlsc.de/images/2017/01/apple_first_paper-1024x560.jpg&#34; alt=&#34;Apple first AI paper&#34; width=&#34;750&#34; height=&#34;410&#34; srcset=&#34;https://blog.wlsc.de/images/2017/01/apple_first_paper-1024x560.jpg 1024w, https://blog.wlsc.de/images/2017/01/apple_first_paper-300x164.jpg 300w, https://blog.wlsc.de/images/2017/01/apple_first_paper-768x420.jpg 768w, https://blog.wlsc.de/images/2017/01/apple_first_paper.jpg 1028w&#34; sizes=&#34;(max-width: 750px) 100vw, 750px&#34; /&gt;&lt;/a&gt;
-&lt;/p&gt;
-&lt;p style=&#34;text-align: left;&#34;&gt;
-  The first paper from Apple company regarding Artificial Intelligence with Deep Learning &lt;a href=&#34;https://arxiv.org/abs/1612.07828&#34; target=&#34;_blank&#34;&gt;is published&lt;/a&gt;!
-&lt;/p&gt;
-&lt;p style=&#34;text-align: left;&#34;&gt;</description>
+      <description>&lt;h2 class=&#34;title mathjax&#34; style=&#34;text-align: center;&#34;&gt;&#xA;  Learning from Simulated and Unsupervised Images through Adversarial Training&#xA;&lt;/h2&gt;&#xA;&lt;p style=&#34;text-align: center;&#34;&gt;&#xA;  &lt;a href=&#34;https://blog.wlsc.de/images/2017/01/apple_first_paper.jpg&#34;&gt;&lt;img class=&#34;aligncenter wp-image-256 size-large&#34; src=&#34;https://blog.wlsc.de/images/2017/01/apple_first_paper-1024x560.jpg&#34; alt=&#34;Apple first AI paper&#34; width=&#34;750&#34; height=&#34;410&#34; srcset=&#34;https://blog.wlsc.de/images/2017/01/apple_first_paper-1024x560.jpg 1024w, https://blog.wlsc.de/images/2017/01/apple_first_paper-300x164.jpg 300w, https://blog.wlsc.de/images/2017/01/apple_first_paper-768x420.jpg 768w, https://blog.wlsc.de/images/2017/01/apple_first_paper.jpg 1028w&#34; sizes=&#34;(max-width: 750px) 100vw, 750px&#34; /&gt;&lt;/a&gt;&#xA;&lt;/p&gt;&#xA;&lt;p style=&#34;text-align: left;&#34;&gt;&#xA;  The first paper from Apple company regarding Artificial Intelligence with Deep Learning &lt;a href=&#34;https://arxiv.org/abs/1612.07828&#34; target=&#34;_blank&#34;&gt;is published&lt;/a&gt;!&#xA;&lt;/p&gt;&#xA;&lt;p style=&#34;text-align: left;&#34;&gt;</description>
     </item>
-    
     <item>
       <title>Bay Area Deep Learning School lectures (Stanford)</title>
       <link>https://blog.wlsc.de/2016/09/25/bay-area-deep-learning-school-lectures-stanford/</link>
       <pubDate>Sun, 25 Sep 2016 18:42:57 +0000</pubDate>
-      
       <guid>https://blog.wlsc.de/2016/09/25/bay-area-deep-learning-school-lectures-stanford/</guid>
-      <description>&lt;img class=&#34;aligncenter wp-image-232 size-full&#34; src=&#34;https://blog.wlsc.de/images/2016/09/bayareadeeplearningschool.jpg&#34; alt=&#34;Bay Area Deep Learning School&#34; width=&#34;759&#34; height=&#34;206&#34; srcset=&#34;https://blog.wlsc.de/images/2016/09/bayareadeeplearningschool.jpg 759w, https://blog.wlsc.de/images/2016/09/bayareadeeplearningschool-300x81.jpg 300w&#34; sizes=&#34;(max-width: 759px) 100vw, 759px&#34; /&gt;
-&lt;p&gt;The Deep Learning School is a great two day set of introduction lectures on Machine Learning, Natural Language Processing and Computer Vision for Deep Learning. The two days event is solely dedicated to Deep Learning! The lectures take place at CEMEX auditorium at the Graduate School of Business on Stanford campus (CA, USA) and include a variety of prominent speakers from the above mentioned research fields.&lt;/p&gt;</description>
+      <description>&lt;img class=&#34;aligncenter wp-image-232 size-full&#34; src=&#34;https://blog.wlsc.de/images/2016/09/bayareadeeplearningschool.jpg&#34; alt=&#34;Bay Area Deep Learning School&#34; width=&#34;759&#34; height=&#34;206&#34; srcset=&#34;https://blog.wlsc.de/images/2016/09/bayareadeeplearningschool.jpg 759w, https://blog.wlsc.de/images/2016/09/bayareadeeplearningschool-300x81.jpg 300w&#34; sizes=&#34;(max-width: 759px) 100vw, 759px&#34; /&gt;&#xA;&lt;p&gt;The Deep Learning School is a great two day set of introduction lectures on Machine Learning, Natural Language Processing and Computer Vision for Deep Learning. The two days event is solely dedicated to Deep Learning! The lectures take place at CEMEX auditorium at the Graduate School of Business on Stanford campus (CA, USA) and include a variety of prominent speakers from the above mentioned research fields.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Double-Checked Locking Pattern with Lazy Singletone Initialization</title>
       <link>https://blog.wlsc.de/2016/09/05/double-checked-locking-pattern-with-lazy-singletone-initialization/</link>
       <pubDate>Mon, 05 Sep 2016 20:11:31 +0000</pubDate>
-      
       <guid>https://blog.wlsc.de/2016/09/05/double-checked-locking-pattern-with-lazy-singletone-initialization/</guid>
-      <description>&lt;p style=&#34;text-align: center;&#34;&gt;
-  &lt;img class=&#34;aligncenter size-medium wp-image-219&#34; src=&#34;https://blog.wlsc.de/images/2016/09/keep-calm-and-double-check-257x300.png&#34; alt=&#34;Keep calm and double check&#34; width=&#34;257&#34; height=&#34;300&#34; srcset=&#34;https://blog.wlsc.de/images/2016/09/keep-calm-and-double-check-257x300.png 257w, https://blog.wlsc.de/images/2016/09/keep-calm-and-double-check.png 600w&#34; sizes=&#34;(max-width: 257px) 100vw, 257px&#34; /&gt;
-&lt;/p&gt;
-&lt;p&gt;In the real world of multicore processors, we have to write multi-threaded applications that would use all cores efficiently. This is very practical, when it comes to high-loaded servers (with a high amount of users trying to access service at the same time). For instance, after you have successfully introduced the new functionality on your web service or fixed some bugs, your first intuition would be to release the new version as soon as possible. At this point, when your users start to access your web service simultaneously, a situation may arise, when two or more users will initialize the same singleton or field value more than once. This is not a favorable type of scenario. It is also the main reason your applications should be ready to initialize its singletons (and not only) properly!&lt;/p&gt;</description>
+      <description>&lt;p style=&#34;text-align: center;&#34;&gt;&#xA;  &lt;img class=&#34;aligncenter size-medium wp-image-219&#34; src=&#34;https://blog.wlsc.de/images/2016/09/keep-calm-and-double-check-257x300.png&#34; alt=&#34;Keep calm and double check&#34; width=&#34;257&#34; height=&#34;300&#34; srcset=&#34;https://blog.wlsc.de/images/2016/09/keep-calm-and-double-check-257x300.png 257w, https://blog.wlsc.de/images/2016/09/keep-calm-and-double-check.png 600w&#34; sizes=&#34;(max-width: 257px) 100vw, 257px&#34; /&gt;&#xA;&lt;/p&gt;&#xA;&lt;p&gt;In the real world of multicore processors, we have to write multi-threaded applications that would use all cores efficiently. This is very practical, when it comes to high-loaded servers (with a high amount of users trying to access service at the same time). For instance, after you have successfully introduced the new functionality on your web service or fixed some bugs, your first intuition would be to release the new version as soon as possible. At this point, when your users start to access your web service simultaneously, a situation may arise, when two or more users will initialize the same singleton or field value more than once. This is not a favorable type of scenario. It is also the main reason your applications should be ready to initialize its singletons (and not only) properly!&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Deepmind AI reduces Google data center cooling bill by 40%</title>
       <link>https://blog.wlsc.de/2016/07/22/deepmind-ai-reduces-google-data-center-cooling-bill-by-40/</link>
       <pubDate>Fri, 22 Jul 2016 10:56:21 +0000</pubDate>
-      
       <guid>https://blog.wlsc.de/2016/07/22/deepmind-ai-reduces-google-data-center-cooling-bill-by-40/</guid>
-      <description>&lt;div dir=&#34;ltr&#34;&gt;
-  &lt;img class=&#34;aligncenter wp-image-193 size-large&#34; src=&#34;https://blog.wlsc.de/images/2016/07/DC_PUE-1024x431.png&#34; alt=&#34;Deepmind&#39;s AI reduces cooling bills&#34; width=&#34;750&#34; height=&#34;316&#34; srcset=&#34;https://blog.wlsc.de/images/2016/07/DC_PUE-1024x431.png 1024w, https://blog.wlsc.de/images/2016/07/DC_PUE-300x126.png 300w, https://blog.wlsc.de/images/2016/07/DC_PUE-768x323.png 768w, https://blog.wlsc.de/images/2016/07/DC_PUE.png 1600w&#34; sizes=&#34;(max-width: 750px) 100vw, 750px&#34; /&gt;
-&lt;/div&gt;
-&lt;p&gt;From smartphone assistants to image recognition and translation, machine learning already helps us in our everyday lives. But it can also help us to tackle some of the world’s most challenging physical problems — such as energy consumption.  Large-scale commercial and industrial systems like data centres consume a lot of energy, and while much has been done to stem the growth of energy use, there remains a lot more to do given the world’s increasing need for computing power.&lt;/p&gt;
-&lt;p&gt;Reducing energy usage has been a major focus for us over the past  10 years: we have built our own super-efficient servers at Google, invented more efficient ways to cool our data centres and invested heavily in green energy sources, with the goal of being powered 100 percent by renewable energy. Compared to five years ago, we now get around 3.5 times the computing power out of the same amount of energy, and we continue to make many improvements each year.&lt;/p&gt;</description>
+      <description>&lt;div dir=&#34;ltr&#34;&gt;&#xA;  &lt;img class=&#34;aligncenter wp-image-193 size-large&#34; src=&#34;https://blog.wlsc.de/images/2016/07/DC_PUE-1024x431.png&#34; alt=&#34;Deepmind&#39;s AI reduces cooling bills&#34; width=&#34;750&#34; height=&#34;316&#34; srcset=&#34;https://blog.wlsc.de/images/2016/07/DC_PUE-1024x431.png 1024w, https://blog.wlsc.de/images/2016/07/DC_PUE-300x126.png 300w, https://blog.wlsc.de/images/2016/07/DC_PUE-768x323.png 768w, https://blog.wlsc.de/images/2016/07/DC_PUE.png 1600w&#34; sizes=&#34;(max-width: 750px) 100vw, 750px&#34; /&gt;&#xA;&lt;/div&gt;&#xA;&lt;p&gt;From smartphone assistants to image recognition and translation, machine learning already helps us in our everyday lives. But it can also help us to tackle some of the world’s most challenging physical problems — such as energy consumption.  Large-scale commercial and industrial systems like data centres consume a lot of energy, and while much has been done to stem the growth of energy use, there remains a lot more to do given the world’s increasing need for computing power.&lt;/p&gt;&#xA;&lt;p&gt;Reducing energy usage has been a major focus for us over the past  10 years: we have built our own super-efficient servers at Google, invented more efficient ways to cool our data centres and invested heavily in green energy sources, with the goal of being powered 100 percent by renewable energy. Compared to five years ago, we now get around 3.5 times the computing power out of the same amount of energy, and we continue to make many improvements each year.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Concrete AI safety problems</title>
       <link>https://blog.wlsc.de/2016/06/22/concrete-ai-safety-problems/</link>
       <pubDate>Wed, 22 Jun 2016 11:20:06 +0000</pubDate>
-      
       <guid>https://blog.wlsc.de/2016/06/22/concrete-ai-safety-problems/</guid>
-      <description>&lt;p&gt;The &lt;strong&gt;“Concrete AI safety problems”&lt;/strong&gt; paper by _Dario Amodei (Google Brain), Chris Olah (Google Brain), Jacob Steinhardt (Stanford University), Paul Christiano (UC Berkeley), John Schulman (OpenAI), Dan Mané (Google Brain) _suggests a new approach to the Machine Learning (ML) and Artificial Intelligence (AI) research, which focuses more on productivity of forward-looking applications while building cutting-edge AI systems.&lt;/p&gt;
-&lt;p&gt;A number of key problems considered in the paper as well as their descriptions are listed below. In the paper authors also elaborate on how to approach each of the given problem.&lt;/p&gt;</description>
+      <description>&lt;p&gt;The &lt;strong&gt;“Concrete AI safety problems”&lt;/strong&gt; paper by _Dario Amodei (Google Brain), Chris Olah (Google Brain), Jacob Steinhardt (Stanford University), Paul Christiano (UC Berkeley), John Schulman (OpenAI), Dan Mané (Google Brain) _suggests a new approach to the Machine Learning (ML) and Artificial Intelligence (AI) research, which focuses more on productivity of forward-looking applications while building cutting-edge AI systems.&lt;/p&gt;&#xA;&lt;p&gt;A number of key problems considered in the paper as well as their descriptions are listed below. In the paper authors also elaborate on how to approach each of the given problem.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Microsoft to acquire LinkedIn</title>
       <link>https://blog.wlsc.de/2016/06/13/microsoft-to-acquire-linkedin/</link>
       <pubDate>Mon, 13 Jun 2016 16:52:52 +0000</pubDate>
-      
       <guid>https://blog.wlsc.de/2016/06/13/microsoft-to-acquire-linkedin/</guid>
-      <description>&lt;p&gt;Funny is: will Skype have a LinkedIn log-in feature now?&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://blog.wlsc.de/images/2016/06/13/microsoft-to-acquire-linkedin/&#34; target=&#34;_blank&#34;&gt;&lt;img class=&#34;aligncenter wp-image-163 size-full&#34; src=&#34;https://blog.wlsc.de/images/2016/06/MS-Linkedin-2016-06-12-1-c.jpg&#34; alt=&#34;Microsoft to acquire LinkedIn&#34; width=&#34;1900&#34; height=&#34;1267&#34; srcset=&#34;https://blog.wlsc.de/images/2016/06/MS-Linkedin-2016-06-12-1-c.jpg 1900w, https://blog.wlsc.de/images/2016/06/MS-Linkedin-2016-06-12-1-c-300x200.jpg 300w, https://blog.wlsc.de/images/2016/06/MS-Linkedin-2016-06-12-1-c-768x512.jpg 768w, https://blog.wlsc.de/images/2016/06/MS-Linkedin-2016-06-12-1-c-1024x683.jpg 1024w&#34; sizes=&#34;(max-width: 1900px) 100vw, 1900px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div id=&#34;watch-headline-title&#34;&gt;
-  &lt;p class=&#34;watch-title-container&#34;&gt;</description>
+      <description>&lt;p&gt;Funny is: will Skype have a LinkedIn log-in feature now?&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://blog.wlsc.de/images/2016/06/13/microsoft-to-acquire-linkedin/&#34; target=&#34;_blank&#34;&gt;&lt;img class=&#34;aligncenter wp-image-163 size-full&#34; src=&#34;https://blog.wlsc.de/images/2016/06/MS-Linkedin-2016-06-12-1-c.jpg&#34; alt=&#34;Microsoft to acquire LinkedIn&#34; width=&#34;1900&#34; height=&#34;1267&#34; srcset=&#34;https://blog.wlsc.de/images/2016/06/MS-Linkedin-2016-06-12-1-c.jpg 1900w, https://blog.wlsc.de/images/2016/06/MS-Linkedin-2016-06-12-1-c-300x200.jpg 300w, https://blog.wlsc.de/images/2016/06/MS-Linkedin-2016-06-12-1-c-768x512.jpg 768w, https://blog.wlsc.de/images/2016/06/MS-Linkedin-2016-06-12-1-c-1024x683.jpg 1024w&#34; sizes=&#34;(max-width: 1900px) 100vw, 1900px&#34; /&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;div id=&#34;watch-headline-title&#34;&gt;&#xA;  &lt;p class=&#34;watch-title-container&#34;&gt;</description>
     </item>
-    
     <item>
       <title>Apache htaccess: Force Domain HTTPS/SSL protocol</title>
       <link>https://blog.wlsc.de/2016/06/13/apache-htaccess-force-domain-httpsssl-protocol/</link>
       <pubDate>Mon, 13 Jun 2016 16:31:42 +0000</pubDate>
-      
       <guid>https://blog.wlsc.de/2016/06/13/apache-htaccess-force-domain-httpsssl-protocol/</guid>
-      <description>&lt;p&gt;In order to redirect all users from the unsecure HTTP to the &lt;strong&gt;secure HTTPS&lt;/strong&gt; connection, you need to edit your &lt;strong&gt;.htaccess&lt;/strong&gt; file. Usually, it is located in the root of your project (e.g., &lt;strong&gt;httpdocs&lt;/strong&gt; folder).&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-apache&#34; data-lang=&#34;apache&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;IfModule&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;mod_rewrite.c&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    RewriteEngine &lt;span style=&#34;color:#66d9ef&#34;&gt;On&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    RewriteCond %{HTTPS} !=on
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/IfModule&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+      <description>&lt;p&gt;In order to redirect all users from the unsecure HTTP to the &lt;strong&gt;secure HTTPS&lt;/strong&gt; connection, you need to edit your &lt;strong&gt;.htaccess&lt;/strong&gt; file. Usually, it is located in the root of your project (e.g., &lt;strong&gt;httpdocs&lt;/strong&gt; folder).&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-apache&#34; data-lang=&#34;apache&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;IfModule&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;mod_rewrite.c&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    RewriteEngine &lt;span style=&#34;color:#66d9ef&#34;&gt;On&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    RewriteCond %{HTTPS} !=on&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/IfModule&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
-    
   </channel>
 </rss>
