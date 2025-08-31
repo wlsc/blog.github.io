@@ -1,81 +1,207 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Double-Checked Locking Pattern with Lazy Singletone Initialization // wlsc_Tech_blog</title>
+<html lang="en" dir="auto">
 
-    <meta charset="utf-8">
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-    <meta name="author" content="Wladimir Schmidt">
-    <meta name="description" content="Blog of a passionate Software Engineer who is happy to share his thoughts, ideas and experience">
-    <meta name="keywords" content="software,engineering,blog,java,">
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Double-Checked Locking Pattern with Lazy Singletone Initialization | wlsc_Tech_blog</title>
+<meta name="keywords" content="design patterns, enum, lock, multithreading, singleton">
+<meta name="description" content="
+  
 
-        <meta property="og:title" content="Double-Checked Locking Pattern with Lazy Singletone Initialization" />
-    <meta property="og:description" content="Blog of a passionate Software Engineer who is happy to share his thoughts, ideas and experience" />
-    <meta property="og:type" content="website" />
-    <meta property="og:locale" content="en" />
-    <meta property="og:url" content="https://blog.wlsc.de/2016/09/05/double-checked-locking-pattern-with-lazy-singletone-initialization/" />
-    
+In the real world of multicore processors, we have to write multi-threaded applications that would use all cores efficiently. This is very practical, when it comes to high-loaded servers (with a high amount of users trying to access service at the same time). For instance, after you have successfully introduced the new functionality on your web service or fixed some bugs, your first intuition would be to release the new version as soon as possible. At this point, when your users start to access your web service simultaneously, a situation may arise, when two or more users will initialize the same singleton or field value more than once. This is not a favorable type of scenario. It is also the main reason your applications should be ready to initialize its singletons (and not only) properly!">
+<meta name="author" content="Wladimir Schmidt">
+<link rel="canonical" href="https://blog.wlsc.de/2016/09/05/double-checked-locking-pattern-with-lazy-singletone-initialization/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.8fe10233a706bc87f2e08b3cf97b8bd4c0a80f10675a143675d59212121037c0.css" integrity="sha256-j&#43;ECM6cGvIfy4Is8&#43;XuL1MCoDxBnWhQ2ddWSEhIQN8A=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://blog.wlsc.de/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://blog.wlsc.de/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://blog.wlsc.de/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://blog.wlsc.de/apple-touch-icon.png">
+<link rel="mask-icon" href="https://blog.wlsc.de/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://blog.wlsc.de/2016/09/05/double-checked-locking-pattern-with-lazy-singletone-initialization/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
 
-    <link rel="shortcut icon" href="/favicon.ico">
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
 
-    <link href="https://blog.wlsc.de/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
-    <link href="https://blog.wlsc.de/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+            .list {
+                background: var(--theme);
+            }
 
-    <link rel="stylesheet" href="https://blog.wlsc.de/css/style.css">
-    
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
 
-    <meta name="generator" content="Hugo 0.121.1">
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:url" content="https://blog.wlsc.de/2016/09/05/double-checked-locking-pattern-with-lazy-singletone-initialization/">
+  <meta property="og:site_name" content="wlsc_Tech_blog">
+  <meta property="og:title" content="Double-Checked Locking Pattern with Lazy Singletone Initialization">
+  <meta property="og:description" content=" In the real world of multicore processors, we have to write multi-threaded applications that would use all cores efficiently. This is very practical, when it comes to high-loaded servers (with a high amount of users trying to access service at the same time). For instance, after you have successfully introduced the new functionality on your web service or fixed some bugs, your first intuition would be to release the new version as soon as possible. At this point, when your users start to access your web service simultaneously, a situation may arise, when two or more users will initialize the same singleton or field value more than once. This is not a favorable type of scenario. It is also the main reason your applications should be ready to initialize its singletons (and not only) properly!">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2016-09-05T20:11:31+00:00">
+    <meta property="article:modified_time" content="2016-09-05T20:11:31+00:00">
+    <meta property="article:tag" content="Design Patterns">
+    <meta property="article:tag" content="Enum">
+    <meta property="article:tag" content="Lock">
+    <meta property="article:tag" content="Multithreading">
+    <meta property="article:tag" content="Singleton">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Double-Checked Locking Pattern with Lazy Singletone Initialization">
+<meta name="twitter:description" content="
+  
+
+In the real world of multicore processors, we have to write multi-threaded applications that would use all cores efficiently. This is very practical, when it comes to high-loaded servers (with a high amount of users trying to access service at the same time). For instance, after you have successfully introduced the new functionality on your web service or fixed some bugs, your first intuition would be to release the new version as soon as possible. At this point, when your users start to access your web service simultaneously, a situation may arise, when two or more users will initialize the same singleton or field value more than once. This is not a favorable type of scenario. It is also the main reason your applications should be ready to initialize its singletons (and not only) properly!">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://blog.wlsc.de/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Double-Checked Locking Pattern with Lazy Singletone Initialization",
+      "item": "https://blog.wlsc.de/2016/09/05/double-checked-locking-pattern-with-lazy-singletone-initialization/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Double-Checked Locking Pattern with Lazy Singletone Initialization",
+  "name": "Double-Checked Locking Pattern with Lazy Singletone Initialization",
+  "description": " In the real world of multicore processors, we have to write multi-threaded applications that would use all cores efficiently. This is very practical, when it comes to high-loaded servers (with a high amount of users trying to access service at the same time). For instance, after you have successfully introduced the new functionality on your web service or fixed some bugs, your first intuition would be to release the new version as soon as possible. At this point, when your users start to access your web service simultaneously, a situation may arise, when two or more users will initialize the same singleton or field value more than once. This is not a favorable type of scenario. It is also the main reason your applications should be ready to initialize its singletons (and not only) properly!\n",
+  "keywords": [
+    "design patterns", "enum", "lock", "multithreading", "singleton"
+  ],
+  "articleBody": " In the real world of multicore processors, we have to write multi-threaded applications that would use all cores efficiently. This is very practical, when it comes to high-loaded servers (with a high amount of users trying to access service at the same time). For instance, after you have successfully introduced the new functionality on your web service or fixed some bugs, your first intuition would be to release the new version as soon as possible. At this point, when your users start to access your web service simultaneously, a situation may arise, when two or more users will initialize the same singleton or field value more than once. This is not a favorable type of scenario. It is also the main reason your applications should be ready to initialize its singletons (and not only) properly!\npublic final class Singleton { // block access for two threads simultaneous private volatile Singleton INSTANCE; /* * Blocks direct object creation */ private Singleton() { } public Singleton getInstance() { // first check: two or more threads can pass this check if (INSTANCE == null) { synchronized (Singleton.class) { // second check: only one thread will initialize the variable instance if (INSTANCE == null) { INSTANCE = new Singleton(); } } } return INSTANCE; } } The code above does the singleton initialization in two major steps:\nThe first step would be to check, if the singleton INSTANCE has been already initialized. No big deal. The second step is however very important. If the check for INSTANCE returns null and the singleton has not been initialized yet, in this case we first synchronize the thread access to get a unique access from only one thread. Afterwards we check the INSTANCE of the singleton class again. These actions are performed in order to be sure that no other thread has already modified the INSTANCE (between the first check INSTANCE for null value and synchronized block). Once a thread has received a unique access and checked INSTANCE for null, it initializes the singleton instance. Do not forget to declare the singleton instance as volatile. Without the volatile variable, another thread could read a half-initialized INSTRANCE variable in the moment when the first thread is about to leave the synchronized block. The volatile variable guarantees happens-before behaviour. This means, that any write action related to the variable will take place prior to any reads. As a result, in the memory the object will be created only once, while your code will be possible to use safely in a multithreaded environment.\nHowever, starting Java 1.5 release, Enum class was introduced. It does allow for an easy multithread-safe creation of a singleton instance.\npublic enum Singleton { INSTANCE; } Many programmers prefer Enums to handcrafting singletons by themselves. Personally I also share this approach and thus I don’t recommend using anything but Enum singletons in your multithreaded applications. This will reduce side-effects, errors and obvious memory leaks in your programs.\nThe Double Checked pattern itself does allow you to initialize any preferred variable in a multithreaded environment, not just a singleton class. Many interviewers tend to ask this question in the job interviews (especially if you are a junior in the beginning of your Software Development career) in order check your ability to understand the basics of multithreaded programming.\n",
+  "wordCount" : "550",
+  "inLanguage": "en",
+  "datePublished": "2016-09-05T20:11:31Z",
+  "dateModified": "2016-09-05T20:11:31Z",
+  "author":{
+    "@type": "Person",
+    "name": "Wladimir Schmidt"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://blog.wlsc.de/2016/09/05/double-checked-locking-pattern-with-lazy-singletone-initialization/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "wlsc_Tech_blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://blog.wlsc.de/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
 
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
 
-<body>
-<div id="container">
-    <header id="header">
-    <div id="header-outer" class="outer">
-        <div id="header-inner" class="inner">
-            <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
-            <a id="logo" class="logo-text" href="https://blog.wlsc.de/">wlsc_Tech_blog</a>
-            <nav id="main-nav">
-                
-                <a class="main-nav-link" href="https://wlsc.de/">..:index:..</a>
-                
-            </nav>
-            <nav id="sub-nav">
-                <div id="search-form-wrap">
-                </div>
-            </nav>
-        </div>
-    </div>
-</header>
+</script>
 
-    <section id="main" class="outer">
-        <article class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        <header class="article-header">
-            <h1 class="article-title" itemprop="name">Double-Checked Locking Pattern with Lazy Singletone Initialization</h1>
-        </header>
-        
-        <div class="article-meta">
-            <a href="/2016/09/05/double-checked-locking-pattern-with-lazy-singletone-initialization/" class="article-date">
-                <time datetime='2016-09-05T20:11:31.000&#43;00:00' itemprop="datePublished">2016-09-05</time>
-            </a>
-            
-            
-            <div class="post-categories">
-                <div class="article-category">
-                    
-                    
-                    <a class="article-category-link" href="https://blog.wlsc.de//categories/java">Java</a>
-                    
-                </div>
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://blog.wlsc.de/" accesskey="h" title="wlsc_Tech_blog (Alt + H)">wlsc_Tech_blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
             </div>
-            
-            
         </div>
-        <div class="article-entry" itemprop="articleBody">
-            <p style="text-align: center;">
+        <ul id="menu">
+            <li>
+                <a href="https://wlsc.de/" title="..:index:..">
+                    <span>..:index:..</span>&nbsp;
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Double-Checked Locking Pattern with Lazy Singletone Initialization
+    </h1>
+    <div class="post-meta"><span title='2016-09-05 20:11:31 +0000 UTC'>September 5, 2016</span>&nbsp;·&nbsp;Wladimir Schmidt
+
+</div>
+  </header> 
+  <div class="post-content"><p style="text-align: center;">
   <img class="aligncenter size-medium wp-image-219" src="/images/2016/09/keep-calm-and-double-check-257x300.png" alt="Keep calm and double check" width="257" height="300" srcset="/images/2016/09/keep-calm-and-double-check-257x300.png 257w, /images/2016/09/keep-calm-and-double-check.png 600w" sizes="(max-width: 257px) 100vw, 257px" />
 </p>
 <p>In the real world of multicore processors, we have to write multi-threaded applications that would use all cores efficiently. This is very practical, when it comes to high-loaded servers (with a high amount of users trying to access service at the same time). For instance, after you have successfully introduced the new functionality on your web service or fixed some bugs, your first intuition would be to release the new version as soon as possible. At this point, when your users start to access your web service simultaneously, a situation may arise, when two or more users will initialize the same singleton or field value more than once. This is not a favorable type of scenario. It is also the main reason your applications should be ready to initialize its singletons (and not only) properly!</p>
@@ -117,112 +243,90 @@
 </span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
 <p>Many programmers prefer Enums to handcrafting singletons by themselves.  Personally I also share this approach and thus I don’t recommend using anything but Enum singletons in your multithreaded applications. This will reduce side-effects, errors and obvious memory leaks in your programs.</p>
 <p>The Double Checked pattern itself does allow you to initialize any preferred variable in a multithreaded environment, not just a singleton class. Many interviewers tend to ask this question in the job interviews (especially if you are a junior in the beginning of your Software Development career) in order check your ability to understand the basics of multithreaded programming.</p>
-        </div>
 
-        
-        
-        <div class="article-toc" >
-            <h3>Contents</h3>
-            <nav id="TableOfContents"></nav>
-        </div>
-        
-        
+  </div>
 
-        
-
-
-        
-        <footer class="article-footer">
-            <ul class="article-tag-list">
-                
-                <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="https://blog.wlsc.de/tags/design-patterns">design patterns
-                    </a>
-                </li>
-                
-                <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="https://blog.wlsc.de/tags/enum">enum
-                    </a>
-                </li>
-                
-                <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="https://blog.wlsc.de/tags/lock">lock
-                    </a>
-                </li>
-                
-                <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="https://blog.wlsc.de/tags/multithreading">multithreading
-                    </a>
-                </li>
-                
-                <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="https://blog.wlsc.de/tags/singleton">singleton
-                    </a>
-                </li>
-                
-            </ul>
-        </footer>
-        
-    </div>
-    
-<nav id="article-nav">
-    
-    <a href="/2016/09/25/bay-area-deep-learning-school-lectures-stanford/" id="article-nav-newer" class="article-nav-link-wrap">
-        <div class="article-nav-title"><span>&lt;</span>&nbsp;
-            Bay Area Deep Learning School lectures (Stanford)
-        </div>
-    </a>
-    
-    
-    <a href="/2016/07/22/deepmind-ai-reduces-google-data-center-cooling-bill-by-40/" id="article-nav-older" class="article-nav-link-wrap">
-        <div class="article-nav-title">Deepmind AI reduces Google data center cooling bill by 40%&nbsp;<span>&gt;</span></div>
-    </a>
-    
-</nav>
-
-
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://blog.wlsc.de/tags/design-patterns/">Design Patterns</a></li>
+      <li><a href="https://blog.wlsc.de/tags/enum/">Enum</a></li>
+      <li><a href="https://blog.wlsc.de/tags/lock/">Lock</a></li>
+      <li><a href="https://blog.wlsc.de/tags/multithreading/">Multithreading</a></li>
+      <li><a href="https://blog.wlsc.de/tags/singleton/">Singleton</a></li>
+    </ul>
+  </footer>
 </article>
-
-        
-    </section>
-    <footer id="footer">
-    <div class="outer">
-        <div id="footer-info" class="inner">
-            &copy; 2024 wlsc_Tech_blog
-            <br />
-            Powered by <a href="https://gohugo.io" target="_blank">Hugo</a> with theme <a href="https://github.com/carsonip/hugo-theme-minos" target="_blank">Minos</a>
-        </div>
-    </div>
+    </main>
     
+<footer class="footer">
+        <span>&copy; 2025 <a href="https://blog.wlsc.de/">wlsc_Tech_blog</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
 <script>
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-68493803-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
 
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/tomorrow-night.min.css" integrity="sha256-2wL88NKUqvJi/ExflDzkzUumjUM73mcK2gBvBBeLvTk=" crossorigin="anonymous" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js" integrity="sha256-KbfTjB0WZ8vvXngdpJGY3Yp3xKk+tttbqClO11anCIU=" crossorigin="anonymous"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-
-    
-    <script>
-        document.getElementById('main-nav-toggle').addEventListener('click', function () {
-            var header = document.getElementById('header');
-            if (header.classList.contains('mobile-on')) {
-                header.classList.remove('mobile-on');
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
             } else {
-                header.classList.add('mobile-on');
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
             }
         });
-    </script>
-</footer>
+    });
 
-</div>
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
 </body>
+
 </html>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>SuperDevMode on wlsc_Tech_blog</title>
     <link>https://blog.wlsc.de/tags/superdevmode/</link>
     <description>Recent content in SuperDevMode on wlsc_Tech_blog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.149.0</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 03 Oct 2015 22:32:57 +0000</lastBuildDate>
     <atom:link href="https://blog.wlsc.de/tags/superdevmode/index.xml" rel="self" type="application/rss+xml" />
@@ -13,7 +13,9 @@
       <link>https://blog.wlsc.de/2015/10/03/launching-gwt-app-in-superdevmode-on-local-tomcat-server/</link>
       <pubDate>Sat, 03 Oct 2015 22:32:57 +0000</pubDate>
       <guid>https://blog.wlsc.de/2015/10/03/launching-gwt-app-in-superdevmode-on-local-tomcat-server/</guid>
-      <description>&lt;img class=&#34;size-full wp-image-15 aligncenter&#34; src=&#34;https://blog.wlsc.de/images/2015/10/navLogoBig.png&#34; alt=&#34;GWT project logo&#34; width=&#34;150&#34; height=&#34;158&#34; /&gt;&#xA;&lt;p&gt;This article is dedicated to all people who are still developing on internal Jetty server and do not know how to run their product on &lt;a href=&#34;http://tomcat.apache.org/&#34; target=&#34;_blank&#34;&gt;Apache Tomcat server&lt;/a&gt;. This guide is valid for &lt;strong&gt;&lt;a href=&#34;http://www.eclipse.org/&#34; target=&#34;_blank&#34;&gt;Eclipse IDE&lt;/a&gt;&lt;/strong&gt; (Currently: v4.5 MARS).&lt;/p&gt;&#xA;&lt;p&gt;First of all, if you are not familiar with &lt;strong&gt;SuperDevMode&lt;/strong&gt; and its prerequisites, please, check the official docs at &lt;a href=&#34;http://www.gwtproject.org/articles/superdevmode.html&#34; target=&#34;_blank&#34;&gt;&lt;a href=&#34;http://www.gwtproject.org&#34;&gt;http://www.gwtproject.org&lt;/a&gt;.&lt;/a&gt;&lt;/p&gt;</description>
+      <description>&lt;img class=&#34;size-full wp-image-15 aligncenter&#34; src=&#34;https://blog.wlsc.de/images/2015/10/navLogoBig.png&#34; alt=&#34;GWT project logo&#34; width=&#34;150&#34; height=&#34;158&#34; /&gt;
+&lt;p&gt;This article is dedicated to all people who are still developing on internal Jetty server and do not know how to run their product on &lt;a href=&#34;http://tomcat.apache.org/&#34; target=&#34;_blank&#34;&gt;Apache Tomcat server&lt;/a&gt;. This guide is valid for &lt;strong&gt;&lt;a href=&#34;http://www.eclipse.org/&#34; target=&#34;_blank&#34;&gt;Eclipse IDE&lt;/a&gt;&lt;/strong&gt; (Currently: v4.5 MARS).&lt;/p&gt;
+&lt;p&gt;First of all, if you are not familiar with &lt;strong&gt;SuperDevMode&lt;/strong&gt; and its prerequisites, please, check the official docs at &lt;a href=&#34;http://www.gwtproject.org/articles/superdevmode.html&#34; target=&#34;_blank&#34;&gt;&lt;a href=&#34;http://www.gwtproject.org&#34;&gt;http://www.gwtproject.org&lt;/a&gt;.&lt;/a&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

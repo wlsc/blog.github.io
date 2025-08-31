@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Learning on wlsc_Tech_blog</title>
     <link>https://blog.wlsc.de/categories/learning/</link>
     <description>Recent content in Learning on wlsc_Tech_blog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.149.0</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 25 Sep 2016 18:42:57 +0000</lastBuildDate>
     <atom:link href="https://blog.wlsc.de/categories/learning/index.xml" rel="self" type="application/rss+xml" />
@@ -13,7 +13,8 @@
       <link>https://blog.wlsc.de/2016/09/25/bay-area-deep-learning-school-lectures-stanford/</link>
       <pubDate>Sun, 25 Sep 2016 18:42:57 +0000</pubDate>
       <guid>https://blog.wlsc.de/2016/09/25/bay-area-deep-learning-school-lectures-stanford/</guid>
-      <description>&lt;img class=&#34;aligncenter wp-image-232 size-full&#34; src=&#34;https://blog.wlsc.de/images/2016/09/bayareadeeplearningschool.jpg&#34; alt=&#34;Bay Area Deep Learning School&#34; width=&#34;759&#34; height=&#34;206&#34; srcset=&#34;https://blog.wlsc.de/images/2016/09/bayareadeeplearningschool.jpg 759w, https://blog.wlsc.de/images/2016/09/bayareadeeplearningschool-300x81.jpg 300w&#34; sizes=&#34;(max-width: 759px) 100vw, 759px&#34; /&gt;&#xA;&lt;p&gt;The Deep Learning School is a great two day set of introduction lectures on Machine Learning, Natural Language Processing and Computer Vision for Deep Learning. The two days event is solely dedicated to Deep Learning! The lectures take place at CEMEX auditorium at the Graduate School of Business on Stanford campus (CA, USA) and include a variety of prominent speakers from the above mentioned research fields.&lt;/p&gt;</description>
+      <description>&lt;img class=&#34;aligncenter wp-image-232 size-full&#34; src=&#34;https://blog.wlsc.de/images/2016/09/bayareadeeplearningschool.jpg&#34; alt=&#34;Bay Area Deep Learning School&#34; width=&#34;759&#34; height=&#34;206&#34; srcset=&#34;https://blog.wlsc.de/images/2016/09/bayareadeeplearningschool.jpg 759w, https://blog.wlsc.de/images/2016/09/bayareadeeplearningschool-300x81.jpg 300w&#34; sizes=&#34;(max-width: 759px) 100vw, 759px&#34; /&gt;
+&lt;p&gt;The Deep Learning School is a great two day set of introduction lectures on Machine Learning, Natural Language Processing and Computer Vision for Deep Learning. The two days event is solely dedicated to Deep Learning! The lectures take place at CEMEX auditorium at the Graduate School of Business on Stanford campus (CA, USA) and include a variety of prominent speakers from the above mentioned research fields.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

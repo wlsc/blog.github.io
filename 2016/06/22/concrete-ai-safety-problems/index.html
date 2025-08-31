@@ -1,86 +1,201 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Concrete AI safety problems // wlsc_Tech_blog</title>
+<html lang="en" dir="auto">
 
-    <meta charset="utf-8">
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-    <meta name="author" content="Wladimir Schmidt">
-    <meta name="description" content="Blog of a passionate Software Engineer who is happy to share his thoughts, ideas and experience">
-    <meta name="keywords" content="software,engineering,blog,java,">
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Concrete AI safety problems | wlsc_Tech_blog</title>
+<meta name="keywords" content="Paper, Safety">
+<meta name="description" content="The “Concrete AI safety problems” paper by _Dario Amodei (Google Brain), Chris Olah (Google Brain), Jacob Steinhardt (Stanford University), Paul Christiano (UC Berkeley), John Schulman (OpenAI), Dan Mané (Google Brain) _suggests a new approach to the Machine Learning (ML) and Artificial Intelligence (AI) research, which focuses more on productivity of forward-looking applications while building cutting-edge AI systems.
+A number of key problems considered in the paper as well as their descriptions are listed below. In the paper authors also elaborate on how to approach each of the given problem.">
+<meta name="author" content="Wladimir Schmidt">
+<link rel="canonical" href="https://blog.wlsc.de/2016/06/22/concrete-ai-safety-problems/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.8fe10233a706bc87f2e08b3cf97b8bd4c0a80f10675a143675d59212121037c0.css" integrity="sha256-j&#43;ECM6cGvIfy4Is8&#43;XuL1MCoDxBnWhQ2ddWSEhIQN8A=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://blog.wlsc.de/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://blog.wlsc.de/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://blog.wlsc.de/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://blog.wlsc.de/apple-touch-icon.png">
+<link rel="mask-icon" href="https://blog.wlsc.de/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://blog.wlsc.de/2016/06/22/concrete-ai-safety-problems/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
 
-        <meta property="og:title" content="Concrete AI safety problems" />
-    <meta property="og:description" content="Blog of a passionate Software Engineer who is happy to share his thoughts, ideas and experience" />
-    <meta property="og:type" content="website" />
-    <meta property="og:locale" content="en" />
-    <meta property="og:url" content="https://blog.wlsc.de/2016/06/22/concrete-ai-safety-problems/" />
-    
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
 
-    <link rel="shortcut icon" href="/favicon.ico">
+            .list {
+                background: var(--theme);
+            }
 
-    <link href="https://blog.wlsc.de/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
-    <link href="https://blog.wlsc.de/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
 
-    <link rel="stylesheet" href="https://blog.wlsc.de/css/style.css">
-    
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
 
-    <meta name="generator" content="Hugo 0.121.1">
+    </style>
+</noscript><meta property="og:url" content="https://blog.wlsc.de/2016/06/22/concrete-ai-safety-problems/">
+  <meta property="og:site_name" content="wlsc_Tech_blog">
+  <meta property="og:title" content="Concrete AI safety problems">
+  <meta property="og:description" content="The “Concrete AI safety problems” paper by _Dario Amodei (Google Brain), Chris Olah (Google Brain), Jacob Steinhardt (Stanford University), Paul Christiano (UC Berkeley), John Schulman (OpenAI), Dan Mané (Google Brain) _suggests a new approach to the Machine Learning (ML) and Artificial Intelligence (AI) research, which focuses more on productivity of forward-looking applications while building cutting-edge AI systems.
+A number of key problems considered in the paper as well as their descriptions are listed below. In the paper authors also elaborate on how to approach each of the given problem.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2016-06-22T11:20:06+00:00">
+    <meta property="article:modified_time" content="2016-06-22T11:20:06+00:00">
+    <meta property="article:tag" content="Paper">
+    <meta property="article:tag" content="Safety">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Concrete AI safety problems">
+<meta name="twitter:description" content="The “Concrete AI safety problems” paper by _Dario Amodei (Google Brain), Chris Olah (Google Brain), Jacob Steinhardt (Stanford University), Paul Christiano (UC Berkeley), John Schulman (OpenAI), Dan Mané (Google Brain) _suggests a new approach to the Machine Learning (ML) and Artificial Intelligence (AI) research, which focuses more on productivity of forward-looking applications while building cutting-edge AI systems.
+A number of key problems considered in the paper as well as their descriptions are listed below. In the paper authors also elaborate on how to approach each of the given problem.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://blog.wlsc.de/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Concrete AI safety problems",
+      "item": "https://blog.wlsc.de/2016/06/22/concrete-ai-safety-problems/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Concrete AI safety problems",
+  "name": "Concrete AI safety problems",
+  "description": "The “Concrete AI safety problems” paper by _Dario Amodei (Google Brain), Chris Olah (Google Brain), Jacob Steinhardt (Stanford University), Paul Christiano (UC Berkeley), John Schulman (OpenAI), Dan Mané (Google Brain) _suggests a new approach to the Machine Learning (ML) and Artificial Intelligence (AI) research, which focuses more on productivity of forward-looking applications while building cutting-edge AI systems.\nA number of key problems considered in the paper as well as their descriptions are listed below. In the paper authors also elaborate on how to approach each of the given problem.\n",
+  "keywords": [
+    "Paper", "Safety"
+  ],
+  "articleBody": "The “Concrete AI safety problems” paper by _Dario Amodei (Google Brain), Chris Olah (Google Brain), Jacob Steinhardt (Stanford University), Paul Christiano (UC Berkeley), John Schulman (OpenAI), Dan Mané (Google Brain) _suggests a new approach to the Machine Learning (ML) and Artificial Intelligence (AI) research, which focuses more on productivity of forward-looking applications while building cutting-edge AI systems.\nA number of key problems considered in the paper as well as their descriptions are listed below. In the paper authors also elaborate on how to approach each of the given problem.\nAvoiding Negative Side Eﬀects: How can we ensure that our cleaning robot will not\ndisturb the environment in negative ways while pursuing its goals, e.g. by knocking over a\nvase because it can clean faster by doing so? Can we do this without manually specifying\neverything the robot should not disturb?\nAvoiding Reward Hacking: How can we ensure that the cleaning robot won’t game its reward function? For example, if we reward the robot for achieving an environment free of\nmesses, it might disable its vision so that it won’t ﬁnd any messes, or cover over messes with\nmaterials it can’t see through, or simply hide when humans are around so they can’t tell it\nabout new types of messes.\nScalable Oversight: How can we eﬃciently ensure that the cleaning robot respects aspects of\nthe objective that are too expensive to be frequently evaluated during training? For instance, it\nshould throw out things that are unlikely to belong to anyone, but put aside things that might\nbelong to someone (it should handle stray candy wrappers diﬀerently from stray cellphones).\nAsking the humans involved whether they lost anything can serve as a check on this, but this\ncheck might have to be relatively infrequent – can the robot ﬁnd a way to do the right thing\ndespite limited information?\nSafe Exploration: How do we ensure that the cleaning robot doesn’t make exploratory\nmoves with very bad repercussions? For example, the robot should experiment with mopping\nstrategies, but putting a wet mop in an electrical outlet is a very bad idea.\nRobustness to Distributional Shift: How do we ensure that the cleaning robot recognizes,\nand behaves robustly, when in an environment diﬀerent from its training environment? For\nexample, heuristics it learned for cleaning factory workﬂoors may be outright dangerous in an\noﬃce.\nSource: Concrete Problems in AI Safety\n",
+  "wordCount" : "395",
+  "inLanguage": "en",
+  "datePublished": "2016-06-22T11:20:06Z",
+  "dateModified": "2016-06-22T11:20:06Z",
+  "author":{
+    "@type": "Person",
+    "name": "Wladimir Schmidt"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://blog.wlsc.de/2016/06/22/concrete-ai-safety-problems/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "wlsc_Tech_blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://blog.wlsc.de/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
 
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
 
-<body>
-<div id="container">
-    <header id="header">
-    <div id="header-outer" class="outer">
-        <div id="header-inner" class="inner">
-            <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
-            <a id="logo" class="logo-text" href="https://blog.wlsc.de/">wlsc_Tech_blog</a>
-            <nav id="main-nav">
-                
-                <a class="main-nav-link" href="https://wlsc.de/">..:index:..</a>
-                
-            </nav>
-            <nav id="sub-nav">
-                <div id="search-form-wrap">
-                </div>
-            </nav>
-        </div>
-    </div>
-</header>
+</script>
 
-    <section id="main" class="outer">
-        <article class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        <header class="article-header">
-            <h1 class="article-title" itemprop="name">Concrete AI safety problems</h1>
-        </header>
-        
-        <div class="article-meta">
-            <a href="/2016/06/22/concrete-ai-safety-problems/" class="article-date">
-                <time datetime='2016-06-22T11:20:06.000&#43;00:00' itemprop="datePublished">2016-06-22</time>
-            </a>
-            
-            
-            <div class="post-categories">
-                <div class="article-category">
-                    
-                    
-                    <a class="article-category-link" href="https://blog.wlsc.de//categories/artificial-intelligence">Artificial Intelligence</a>
-                    
-                    
-                    <span>&gt;</span>
-                    
-                    <a class="article-category-link" href="https://blog.wlsc.de//categories/machine-learning">Machine Learning</a>
-                    
-                </div>
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://blog.wlsc.de/" accesskey="h" title="wlsc_Tech_blog (Alt + H)">wlsc_Tech_blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
             </div>
-            
-            
         </div>
-        <div class="article-entry" itemprop="articleBody">
-            <p>The <strong>“Concrete AI safety problems”</strong> paper by _Dario Amodei (Google Brain), Chris Olah (Google Brain), Jacob Steinhardt (Stanford University), Paul Christiano (UC Berkeley), John Schulman (OpenAI), Dan Mané (Google Brain) _suggests a new approach to the Machine Learning (ML) and Artificial Intelligence (AI) research, which focuses more on productivity of forward-looking applications while building cutting-edge AI systems.</p>
+        <ul id="menu">
+            <li>
+                <a href="https://wlsc.de/" title="..:index:..">
+                    <span>..:index:..</span>&nbsp;
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Concrete AI safety problems
+    </h1>
+    <div class="post-meta"><span title='2016-06-22 11:20:06 +0000 UTC'>June 22, 2016</span>&nbsp;·&nbsp;Wladimir Schmidt
+
+</div>
+  </header> 
+  <div class="post-content"><p>The <strong>“Concrete AI safety problems”</strong> paper by _Dario Amodei (Google Brain), Chris Olah (Google Brain), Jacob Steinhardt (Stanford University), Paul Christiano (UC Berkeley), John Schulman (OpenAI), Dan Mané (Google Brain) _suggests a new approach to the Machine Learning (ML) and Artificial Intelligence (AI) research, which focuses more on productivity of forward-looking applications while building cutting-edge AI systems.</p>
 <p>A number of key problems considered in the paper as well as their descriptions are listed below. In the paper authors also elaborate on how to approach each of the given problem.</p>
 <ul>
 <li>
@@ -120,97 +235,87 @@
 </li>
 </ul>
 <p><em>Source: <a href="https://arxiv.org/abs/1606.06565" target="_blank">Concrete Problems in AI Safety</a></em></p>
-        </div>
 
-        
-        
-        <div class="article-toc" >
-            <h3>Contents</h3>
-            <nav id="TableOfContents"></nav>
-        </div>
-        
-        
+  </div>
 
-        
-
-
-        
-        <footer class="article-footer">
-            <ul class="article-tag-list">
-                
-                <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="https://blog.wlsc.de/tags/paper">Paper
-                    </a>
-                </li>
-                
-                <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="https://blog.wlsc.de/tags/safety">Safety
-                    </a>
-                </li>
-                
-            </ul>
-        </footer>
-        
-    </div>
-    
-<nav id="article-nav">
-    
-    <a href="/2016/07/22/deepmind-ai-reduces-google-data-center-cooling-bill-by-40/" id="article-nav-newer" class="article-nav-link-wrap">
-        <div class="article-nav-title"><span>&lt;</span>&nbsp;
-            Deepmind AI reduces Google data center cooling bill by 40%
-        </div>
-    </a>
-    
-    
-    <a href="/2016/06/13/microsoft-to-acquire-linkedin/" id="article-nav-older" class="article-nav-link-wrap">
-        <div class="article-nav-title">Microsoft to acquire LinkedIn&nbsp;<span>&gt;</span></div>
-    </a>
-    
-</nav>
-
-
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://blog.wlsc.de/tags/paper/">Paper</a></li>
+      <li><a href="https://blog.wlsc.de/tags/safety/">Safety</a></li>
+    </ul>
+  </footer>
 </article>
-
-        
-    </section>
-    <footer id="footer">
-    <div class="outer">
-        <div id="footer-info" class="inner">
-            &copy; 2024 wlsc_Tech_blog
-            <br />
-            Powered by <a href="https://gohugo.io" target="_blank">Hugo</a> with theme <a href="https://github.com/carsonip/hugo-theme-minos" target="_blank">Minos</a>
-        </div>
-    </div>
+    </main>
     
+<footer class="footer">
+        <span>&copy; 2025 <a href="https://blog.wlsc.de/">wlsc_Tech_blog</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
 <script>
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-68493803-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
 
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/tomorrow-night.min.css" integrity="sha256-2wL88NKUqvJi/ExflDzkzUumjUM73mcK2gBvBBeLvTk=" crossorigin="anonymous" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js" integrity="sha256-KbfTjB0WZ8vvXngdpJGY3Yp3xKk+tttbqClO11anCIU=" crossorigin="anonymous"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-
-    
-    <script>
-        document.getElementById('main-nav-toggle').addEventListener('click', function () {
-            var header = document.getElementById('header');
-            if (header.classList.contains('mobile-on')) {
-                header.classList.remove('mobile-on');
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
             } else {
-                header.classList.add('mobile-on');
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
             }
         });
-    </script>
-</footer>
+    });
 
-</div>
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
 </body>
+
 </html>
